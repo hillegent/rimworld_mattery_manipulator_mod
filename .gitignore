@@ -1,0 +1,19 @@
+# OS/editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+.idea/
+.vscode/
+
+# Build scratch output
+bin/
+obj/
+*.pdb
+*.mdb
+
+# RimWorld/runtime logs and local settings
+Player.log
+Player-prev.log
+About/PublishedFileId.txt
+HugsLibRecordKeeper/
+ModSettings/

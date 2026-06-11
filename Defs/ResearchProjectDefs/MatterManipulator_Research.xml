@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchProjectDef>
+    <defName>MatterManipulation</defName>
+    <label>matter manipulation</label>
+    <description>Unlocks the matter manipulator and matter hopper: a high-energy system for reconstructing any input feedstock into selected finished items.</description>
+    <baseCost>10000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>AdvancedFabrication</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>19.00</researchViewX>
+    <researchViewY>4.60</researchViewY>
+    <generalRules>
+      <rulesStrings>
+        <li>subject->matter manipulation</li>
+        <li>subject_story->converted useless scrap into vital supplies with a prototype matter lattice</li>
+        <li>subject_story->stabilized a high-energy assembler that could rebuild materials atom by atom</li>
+        <li>subject_gerund->reconstructing matter at industrial scale</li>
+      </rulesStrings>
+    </generalRules>
+  </ResearchProjectDef>
+</Defs>

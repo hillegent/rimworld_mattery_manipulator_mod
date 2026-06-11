@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>манипулятор материи</MatterManipulator.label>
+  <MatterManipulator.description>Автономная машина для перестройки материи. Выберите предмет, загрузите любые ресурсы общей массой вдвое больше массы результата, и здание начнет работу без оператора. Цикл занимает 8 часов за 1 кг готового изделия.</MatterManipulator.description>
+  <MatterHopper.label>воронка материи</MatterHopper.label>
+  <MatterHopper.description>Воронка для подачи сырья в манипулятор материи. В отличие от пищевой воронки, принимает почти любые складируемые предметы и ресурсы.</MatterHopper.description>
+</LanguageData>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.ModName>Манипулятор материи</MatterManipulator.ModName>
+  <MatterManipulator.NoneSelected>не выбрано</MatterManipulator.NoneSelected>
+
+  <MatterManipulator.Settings.General>Основные параметры</MatterManipulator.Settings.General>
+  <MatterManipulator.Settings.PowerConsumption>Энергопотребление, Вт</MatterManipulator.Settings.PowerConsumption>
+  <MatterManipulator.Settings.InputMassFactor>Масса входа относительно результата</MatterManipulator.Settings.InputMassFactor>
+  <MatterManipulator.Settings.HoursPerKg>Часов работы за 1 кг</MatterManipulator.Settings.HoursPerKg>
+  <MatterManipulator.Settings.ResearchCost>Стоимость исследования</MatterManipulator.Settings.ResearchCost>
+  <MatterManipulator.Settings.QualityMultipliers>Множители времени для качества</MatterManipulator.Settings.QualityMultipliers>
+  <MatterManipulator.Settings.ResetDefaults>Сбросить к значениям по умолчанию</MatterManipulator.Settings.ResetDefaults>
+
+  <MatterManipulator.Quality.Random>Случайное</MatterManipulator.Quality.Random>
+  <MatterManipulator.Quality.RandomEveryCycle>каждый цикл случайно</MatterManipulator.Quality.RandomEveryCycle>
+  <MatterManipulator.Quality.Awful>Ужасное</MatterManipulator.Quality.Awful>
+  <MatterManipulator.Quality.Poor>Плохое</MatterManipulator.Quality.Poor>
+  <MatterManipulator.Quality.Normal>Нормальное</MatterManipulator.Quality.Normal>
+  <MatterManipulator.Quality.Good>Хорошее</MatterManipulator.Quality.Good>
+  <MatterManipulator.Quality.Excellent>Отличное</MatterManipulator.Quality.Excellent>
+  <MatterManipulator.Quality.Masterwork>Шедевр</MatterManipulator.Quality.Masterwork>
+  <MatterManipulator.Quality.Legendary>Легендарное</MatterManipulator.Quality.Legendary>
+
+  <MatterManipulator.Inspect.Target>Цель: {0}</MatterManipulator.Inspect.Target>
+  <MatterManipulator.Inspect.RequiredMass>Нужно массы: {0} кг</MatterManipulator.Inspect.RequiredMass>
+  <MatterManipulator.Inspect.MassBuffer>Буфер массы: {0} кг</MatterManipulator.Inspect.MassBuffer>
+  <MatterManipulator.Inspect.CycleTime>Время цикла: {0}</MatterManipulator.Inspect.CycleTime>
+  <MatterManipulator.Inspect.Mode>Режим: {0}</MatterManipulator.Inspect.Mode>
+  <MatterManipulator.Inspect.Quality>Качество: {0}</MatterManipulator.Inspect.Quality>
+  <MatterManipulator.Inspect.CycleQuality>Качество цикла: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.Hoppers>Воронки: {0}</MatterManipulator.Inspect.Hoppers>
+
+  <MatterManipulator.Status.SelectItem>Статус: выберите предмет.</MatterManipulator.Status.SelectItem>
+  <MatterManipulator.Status.NoPower>Статус: нет питания.</MatterManipulator.Status.NoPower>
+  <MatterManipulator.Status.NeedsHopper>Статус: нужна соседняя воронка материи.</MatterManipulator.Status.NeedsHopper>
+  <MatterManipulator.Status.WaitingResources>Статус: ждет ресурсов ({0} кг).</MatterManipulator.Status.WaitingResources>
+  <MatterManipulator.Status.Working>Статус: работает ({0}%).</MatterManipulator.Status.Working>
+
+  <MatterManipulator.Progress.NoPower>нет питания</MatterManipulator.Progress.NoPower>
+  <MatterManipulator.Progress.Feedstock>сырье {0}%</MatterManipulator.Progress.Feedstock>
+
+  <MatterManipulator.Command.SelectProduct>Выбрать изделие</MatterManipulator.Command.SelectProduct>
+  <MatterManipulator.Command.SelectProductDesc>Выбрать предмет, который будет создавать манипулятор материи. После выбора машина сама потребит ресурсы по массе и начнет цикл при наличии питания.</MatterManipulator.Command.SelectProductDesc>
+  <MatterManipulator.Command.BuildHopper>Построить воронку</MatterManipulator.Command.BuildHopper>
+  <MatterManipulator.Command.BuildHopperDesc>Включить режим размещения воронки материи рядом с манипулятором.</MatterManipulator.Command.BuildHopperDesc>
+  <MatterManipulator.Command.Mode>Режим: {0}</MatterManipulator.Command.Mode>
+  <MatterManipulator.Command.ModeDesc>Переключить режим производства: сделать один предмет и остановиться или повторять производство, пока хватает ресурсов.</MatterManipulator.Command.ModeDesc>
+  <MatterManipulator.Command.Material>Материал: {0}</MatterManipulator.Command.Material>
+  <MatterManipulator.Command.MaterialDesc>Выбрать материал готового предмета. Множитель материала применяется ко времени цикла.</MatterManipulator.Command.MaterialDesc>
+  <MatterManipulator.Command.Quality>Качество: {0}</MatterManipulator.Command.Quality>
+  <MatterManipulator.Command.QualityDesc>Выбрать качество готового предмета. В режиме случайного качества каждый цикл бросает качество заново и применяет соответствующий множитель времени.</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.ClearTarget>Сбросить цель</MatterManipulator.Command.ClearTarget>
+  <MatterManipulator.Command.ClearTargetDesc>Отменить текущий выбранный предмет. Накопленный массовый буфер останется внутри машины.</MatterManipulator.Command.ClearTargetDesc>
+
+  <MatterManipulator.Message.ProductSelected>Манипулятор материи: выбрано изделие {0}.</MatterManipulator.Message.ProductSelected>
+  <MatterManipulator.Message.MaterialSelected>Манипулятор материи: материал {0}.</MatterManipulator.Message.MaterialSelected>
+  <MatterManipulator.Message.ModeSelected>Манипулятор материи: режим {0}.</MatterManipulator.Message.ModeSelected>
+  <MatterManipulator.Message.QualitySelected>Манипулятор материи: качество {0}.</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.MakeFailed>Манипулятор материи не смог создать выбранный предмет.</MatterManipulator.Message.MakeFailed>
+  <MatterManipulator.Message.NoOutputSpace>Манипулятор материи не нашел места для готового предмета.</MatterManipulator.Message.NoOutputSpace>
+  <MatterManipulator.Message.Created>Манипулятор материи создал {0}.</MatterManipulator.Message.Created>
+
+  <MatterManipulator.Mode.Repeat>повторять</MatterManipulator.Mode.Repeat>
+  <MatterManipulator.Mode.MakeOne>сделать 1</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.Time.Hours>{0} ч</MatterManipulator.Time.Hours>
+  <MatterManipulator.Time.HourRange>{0}-{1} ч</MatterManipulator.Time.HourRange>
+  <MatterManipulator.Time.HoursMultiplier>{0} ч (x{1})</MatterManipulator.Time.HoursMultiplier>
+
+  <MatterManipulator.Dialog.Quality.Title>Выбрать качество</MatterManipulator.Dialog.Quality.Title>
+  <MatterManipulator.Dialog.Quality.Description>Множитель применяется к времени цикла. Случайное качество бросается отдельно для каждого нового цикла.</MatterManipulator.Dialog.Quality.Description>
+  <MatterManipulator.Dialog.Stuff.Title>Выбрать материал</MatterManipulator.Dialog.Stuff.Title>
+  <MatterManipulator.Dialog.Stuff.Found>Найдено: {0}. Множитель применяется ко времени цикла.</MatterManipulator.Dialog.Stuff.Found>
+  <MatterManipulator.Dialog.Stuff.Info>x{0} / {1} ч</MatterManipulator.Dialog.Stuff.Info>
+  <MatterManipulator.Dialog.Product.Title>Выбрать изделие</MatterManipulator.Dialog.Product.Title>
+  <MatterManipulator.Dialog.Product.Found>Найдено: {0}. Поиск идет по названию и defName.</MatterManipulator.Dialog.Product.Found>
+  <MatterManipulator.Dialog.Product.Info>{0} кг / {1} ч</MatterManipulator.Dialog.Product.Info>
+
+  <MatterManipulator.Button.Selected>Выбрано</MatterManipulator.Button.Selected>
+  <MatterManipulator.Button.Select>Выбрать</MatterManipulator.Button.Select>
+  <MatterManipulator.Button.Material>Материал</MatterManipulator.Button.Material>
+</LanguageData>
