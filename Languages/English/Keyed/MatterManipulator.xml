@@ -8,6 +8,7 @@
   <MatterManipulator.Settings.InputMassFactor>Input mass relative to output</MatterManipulator.Settings.InputMassFactor>
   <MatterManipulator.Settings.HoursPerKg>Work hours per kg</MatterManipulator.Settings.HoursPerKg>
   <MatterManipulator.Settings.ResearchCost>Research cost</MatterManipulator.Settings.ResearchCost>
+  <MatterManipulator.Settings.ShowResultNotifications>Show result notifications</MatterManipulator.Settings.ShowResultNotifications>
   <MatterManipulator.Settings.QualityMultipliers>Quality time multipliers</MatterManipulator.Settings.QualityMultipliers>
   <MatterManipulator.Settings.ResetDefaults>Reset to defaults</MatterManipulator.Settings.ResetDefaults>
 

@@ -88,11 +88,13 @@ namespace MatterManipulator
         public const float DefaultExcellentMultiplier = 1f;
         public const float DefaultMasterworkMultiplier = 1.2f;
         public const float DefaultLegendaryMultiplier = 1.5f;
+        public const bool DefaultShowResultNotifications = true;
 
         public float inputMassFactor = DefaultInputMassFactor;
         public float hoursPerKg = DefaultHoursPerKg;
         public float powerConsumptionWatts = DefaultPowerConsumptionWatts;
         public float researchCost = DefaultResearchCost;
+        public bool showResultNotifications = DefaultShowResultNotifications;
         public float awfulMultiplier = DefaultAwfulMultiplier;
         public float poorMultiplier = DefaultPoorMultiplier;
         public float normalMultiplier = DefaultNormalMultiplier;
@@ -120,6 +122,7 @@ namespace MatterManipulator
             Scribe_Values.Look(ref hoursPerKg, "hoursPerKg", DefaultHoursPerKg);
             Scribe_Values.Look(ref powerConsumptionWatts, "powerConsumptionWatts", DefaultPowerConsumptionWatts);
             Scribe_Values.Look(ref researchCost, "researchCost", DefaultResearchCost);
+            Scribe_Values.Look(ref showResultNotifications, "showResultNotifications", DefaultShowResultNotifications);
             Scribe_Values.Look(ref awfulMultiplier, "awfulMultiplier", DefaultAwfulMultiplier);
             Scribe_Values.Look(ref poorMultiplier, "poorMultiplier", DefaultPoorMultiplier);
             Scribe_Values.Look(ref normalMultiplier, "normalMultiplier", DefaultNormalMultiplier);
@@ -143,6 +146,7 @@ namespace MatterManipulator
             NumericField(listing, MatterManipulatorText.T("MatterManipulator.Settings.HoursPerKg"), ref hoursPerKg, ref hoursPerKgBuffer, 0.01f, 1000f);
 
             NumericField(listing, MatterManipulatorText.T("MatterManipulator.Settings.ResearchCost"), ref researchCost, ref researchCostBuffer, 1f, 1000000f);
+            listing.CheckboxLabeled(MatterManipulatorText.T("MatterManipulator.Settings.ShowResultNotifications"), ref showResultNotifications);
 
             listing.GapLine();
             listing.Label(MatterManipulatorText.T("MatterManipulator.Settings.QualityMultipliers"));
@@ -187,6 +191,7 @@ namespace MatterManipulator
             hoursPerKg = DefaultHoursPerKg;
             powerConsumptionWatts = DefaultPowerConsumptionWatts;
             researchCost = DefaultResearchCost;
+            showResultNotifications = DefaultShowResultNotifications;
             awfulMultiplier = DefaultAwfulMultiplier;
             poorMultiplier = DefaultPoorMultiplier;
             normalMultiplier = DefaultNormalMultiplier;
@@ -763,7 +768,10 @@ namespace MatterManipulator
                 return false;
             }
 
-            Messages.Message(MatterManipulatorText.T("MatterManipulator.Message.Created", product.LabelShortCap), product, MessageTypeDefOf.TaskCompletion, false);
+            if (Settings?.showResultNotifications ?? MatterManipulatorSettings.DefaultShowResultNotifications)
+            {
+                Messages.Message(MatterManipulatorText.T("MatterManipulator.Message.Created", product.LabelShortCap), product, MessageTypeDefOf.TaskCompletion, false);
+            }
             return true;
         }
 
