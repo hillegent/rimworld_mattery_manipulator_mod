@@ -26,6 +26,7 @@
   <MatterManipulator.Inspect.MassBuffer>Буфер массы: {0} кг</MatterManipulator.Inspect.MassBuffer>
   <MatterManipulator.Inspect.CycleTime>Время цикла: {0}</MatterManipulator.Inspect.CycleTime>
   <MatterManipulator.Inspect.Mode>Режим: {0}</MatterManipulator.Inspect.Mode>
+  <MatterManipulator.Inspect.BatchSize>Размер пачки: {0}</MatterManipulator.Inspect.BatchSize>
   <MatterManipulator.Inspect.Quality>Качество: {0}</MatterManipulator.Inspect.Quality>
   <MatterManipulator.Inspect.CycleQuality>Качество цикла: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
   <MatterManipulator.Inspect.Hoppers>Воронки: {0}</MatterManipulator.Inspect.Hoppers>
@@ -44,7 +45,9 @@
   <MatterManipulator.Command.BuildHopper>Построить воронку</MatterManipulator.Command.BuildHopper>
   <MatterManipulator.Command.BuildHopperDesc>Включить режим размещения воронки материи рядом с манипулятором.</MatterManipulator.Command.BuildHopperDesc>
   <MatterManipulator.Command.Mode>Режим: {0}</MatterManipulator.Command.Mode>
-  <MatterManipulator.Command.ModeDesc>Переключить режим производства: сделать один предмет и остановиться или повторять производство, пока хватает ресурсов.</MatterManipulator.Command.ModeDesc>
+  <MatterManipulator.Command.ModeDesc>Переключить режим производства: сделать одну пачку и остановиться или повторять производство, пока хватает ресурсов.</MatterManipulator.Command.ModeDesc>
+  <MatterManipulator.Command.BatchSize>Пачка: {0}</MatterManipulator.Command.BatchSize>
+  <MatterManipulator.Command.BatchSizeDesc>Переключить размер стака, создаваемого за один цикл. Доступно только для предметов, которые могут стаковаться.</MatterManipulator.Command.BatchSizeDesc>
   <MatterManipulator.Command.Material>Материал: {0}</MatterManipulator.Command.Material>
   <MatterManipulator.Command.MaterialDesc>Выбрать материал готового предмета. Множитель материала применяется ко времени цикла.</MatterManipulator.Command.MaterialDesc>
   <MatterManipulator.Command.Quality>Качество: {0}</MatterManipulator.Command.Quality>
@@ -55,13 +58,14 @@
   <MatterManipulator.Message.ProductSelected>Манипулятор материи: выбрано изделие {0}.</MatterManipulator.Message.ProductSelected>
   <MatterManipulator.Message.MaterialSelected>Манипулятор материи: материал {0}.</MatterManipulator.Message.MaterialSelected>
   <MatterManipulator.Message.ModeSelected>Манипулятор материи: режим {0}.</MatterManipulator.Message.ModeSelected>
+  <MatterManipulator.Message.BatchSelected>Манипулятор материи: размер пачки {0}.</MatterManipulator.Message.BatchSelected>
   <MatterManipulator.Message.QualitySelected>Манипулятор материи: качество {0}.</MatterManipulator.Message.QualitySelected>
   <MatterManipulator.Message.MakeFailed>Манипулятор материи не смог создать выбранный предмет.</MatterManipulator.Message.MakeFailed>
   <MatterManipulator.Message.NoOutputSpace>Манипулятор материи не нашел места для готового предмета.</MatterManipulator.Message.NoOutputSpace>
   <MatterManipulator.Message.Created>Манипулятор материи создал {0}.</MatterManipulator.Message.Created>
 
   <MatterManipulator.Mode.Repeat>повторять</MatterManipulator.Mode.Repeat>
-  <MatterManipulator.Mode.MakeOne>сделать 1</MatterManipulator.Mode.MakeOne>
+  <MatterManipulator.Mode.MakeOne>сделать один раз</MatterManipulator.Mode.MakeOne>
 
   <MatterManipulator.Time.Hours>{0} ч</MatterManipulator.Time.Hours>
   <MatterManipulator.Time.HourRange>{0}-{1} ч</MatterManipulator.Time.HourRange>

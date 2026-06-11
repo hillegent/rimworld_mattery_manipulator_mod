@@ -26,6 +26,7 @@
   <MatterManipulator.Inspect.MassBuffer>Mass buffer: {0} kg</MatterManipulator.Inspect.MassBuffer>
   <MatterManipulator.Inspect.CycleTime>Cycle time: {0}</MatterManipulator.Inspect.CycleTime>
   <MatterManipulator.Inspect.Mode>Mode: {0}</MatterManipulator.Inspect.Mode>
+  <MatterManipulator.Inspect.BatchSize>Batch size: {0}</MatterManipulator.Inspect.BatchSize>
   <MatterManipulator.Inspect.Quality>Quality: {0}</MatterManipulator.Inspect.Quality>
   <MatterManipulator.Inspect.CycleQuality>Cycle quality: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
   <MatterManipulator.Inspect.Hoppers>Hoppers: {0}</MatterManipulator.Inspect.Hoppers>
@@ -44,7 +45,9 @@
   <MatterManipulator.Command.BuildHopper>Build hopper</MatterManipulator.Command.BuildHopper>
   <MatterManipulator.Command.BuildHopperDesc>Enter placement mode for a matter hopper next to the manipulator.</MatterManipulator.Command.BuildHopperDesc>
   <MatterManipulator.Command.Mode>Mode: {0}</MatterManipulator.Command.Mode>
-  <MatterManipulator.Command.ModeDesc>Switch production mode: make one item and stop, or repeat production while resources are available.</MatterManipulator.Command.ModeDesc>
+  <MatterManipulator.Command.ModeDesc>Switch production mode: make one batch and stop, or repeat production while resources are available.</MatterManipulator.Command.ModeDesc>
+  <MatterManipulator.Command.BatchSize>Batch: {0}</MatterManipulator.Command.BatchSize>
+  <MatterManipulator.Command.BatchSizeDesc>Switch the stack size created by each cycle. Available only for items that can stack.</MatterManipulator.Command.BatchSizeDesc>
   <MatterManipulator.Command.Material>Material: {0}</MatterManipulator.Command.Material>
   <MatterManipulator.Command.MaterialDesc>Select the material for the finished item. The material multiplier is applied to cycle time.</MatterManipulator.Command.MaterialDesc>
   <MatterManipulator.Command.Quality>Quality: {0}</MatterManipulator.Command.Quality>
@@ -55,13 +58,14 @@
   <MatterManipulator.Message.ProductSelected>Matter manipulator: selected product {0}.</MatterManipulator.Message.ProductSelected>
   <MatterManipulator.Message.MaterialSelected>Matter manipulator: material {0}.</MatterManipulator.Message.MaterialSelected>
   <MatterManipulator.Message.ModeSelected>Matter manipulator: mode {0}.</MatterManipulator.Message.ModeSelected>
+  <MatterManipulator.Message.BatchSelected>Matter manipulator: batch size {0}.</MatterManipulator.Message.BatchSelected>
   <MatterManipulator.Message.QualitySelected>Matter manipulator: quality {0}.</MatterManipulator.Message.QualitySelected>
   <MatterManipulator.Message.MakeFailed>The matter manipulator could not create the selected item.</MatterManipulator.Message.MakeFailed>
   <MatterManipulator.Message.NoOutputSpace>The matter manipulator could not find space for the finished item.</MatterManipulator.Message.NoOutputSpace>
   <MatterManipulator.Message.Created>The matter manipulator created {0}.</MatterManipulator.Message.Created>
 
   <MatterManipulator.Mode.Repeat>repeat</MatterManipulator.Mode.Repeat>
-  <MatterManipulator.Mode.MakeOne>make 1</MatterManipulator.Mode.MakeOne>
+  <MatterManipulator.Mode.MakeOne>make once</MatterManipulator.Mode.MakeOne>
 
   <MatterManipulator.Time.Hours>{0} h</MatterManipulator.Time.Hours>
   <MatterManipulator.Time.HourRange>{0}-{1} h</MatterManipulator.Time.HourRange>

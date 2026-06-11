@@ -244,6 +244,8 @@ namespace MatterManipulator
     public class Building_MatterManipulator : Building
     {
         private const int RandomQualityMode = -1;
+        private const int DefaultBatchCount = 1;
+        private static readonly int[] BatchCountChoices = { 1, 5, 10, 100 };
         private static readonly QualityCategory[] QualityChoices =
         {
             QualityCategory.Awful,
@@ -272,15 +274,19 @@ namespace MatterManipulator
         private float feedstockMass;
         private int selectedQuality = RandomQualityMode;
         private int cycleQuality = RandomQualityMode;
+        private int batchCount = DefaultBatchCount;
         private bool repeatProduction = true;
         private CompPowerTrader powerComp;
 
         private bool Powered => powerComp == null || powerComp.PowerOn;
-        private float ProductMass => targetDef == null ? 0f : MassForProduct(targetDef, targetStuff);
+        private float ProductMass => targetDef == null ? 0f : MassForProduct(targetDef, targetStuff) * ActiveBatchCount;
         private float RequiredFeedstockMass => ProductMass * InputMassFactor;
         private int BaseRequiredWorkTicks => targetDef == null ? 0 : Mathf.Max(1, Mathf.CeilToInt(ProductMass * WorkTicksPerKg * CurrentStuffWorkMultiplier));
         private int RequiredWorkTicks => targetDef == null ? 0 : Mathf.Max(1, Mathf.CeilToInt(BaseRequiredWorkTicks * CurrentQualityMultiplier));
         private float ProgressPct => RequiredWorkTicks <= 0 ? 0f : Mathf.Clamp01(progressTicks / (float)RequiredWorkTicks);
+        private int ActiveBatchCount => ClampBatchCount(targetDef, batchCount);
+        private bool TargetSupportsBatching => SupportsBatching(targetDef);
+        private bool TargetSupportsBatchSelection => TargetSupportsBatching && BatchCountModesFor(targetDef).Skip(1).Any();
         private bool TargetSupportsQuality => targetDef != null && SupportsQuality(targetDef);
         private bool TargetSupportsStuff => targetDef != null && targetDef.MadeFromStuff && targetStuff != null;
         private float CurrentQualityMultiplier => TargetSupportsQuality ? QualityMultiplier(CurrentCycleQualityForTiming()) : 1f;
@@ -323,10 +329,15 @@ namespace MatterManipulator
             Scribe_Values.Look(ref feedstockMass, "feedstockMass", 0f);
             Scribe_Values.Look(ref selectedQuality, "selectedQuality", RandomQualityMode);
             Scribe_Values.Look(ref cycleQuality, "cycleQuality", RandomQualityMode);
+            Scribe_Values.Look(ref batchCount, "batchCount", DefaultBatchCount);
             Scribe_Values.Look(ref repeatProduction, "repeatProduction", true);
-            if (Scribe.mode == LoadSaveMode.PostLoadInit && targetDef != null && targetDef.MadeFromStuff)
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                targetStuff = ValidStuffFor(targetDef, targetStuff);
+                if (targetDef != null && targetDef.MadeFromStuff)
+                {
+                    targetStuff = ValidStuffFor(targetDef, targetStuff);
+                }
+                batchCount = ClampBatchCount(targetDef, batchCount);
             }
         }
 
@@ -403,6 +414,10 @@ namespace MatterManipulator
             sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.MassBuffer", feedstockMass.ToString("0.##")));
             sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.CycleTime", WorkTimeLabel()));
             sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.Mode", ProductionModeLabel()));
+            if (TargetSupportsBatchSelection)
+            {
+                sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.BatchSize", ActiveBatchCount.ToString()));
+            }
             if (TargetSupportsQuality)
             {
                 sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.Quality", SelectedQualityLabel()));
@@ -513,6 +528,17 @@ namespace MatterManipulator
                     action = ToggleProductionMode
                 };
 
+                if (TargetSupportsBatchSelection)
+                {
+                    yield return new Command_Action
+                    {
+                        defaultLabel = MatterManipulatorText.T("MatterManipulator.Command.BatchSize", ActiveBatchCount.ToString()),
+                        defaultDesc = MatterManipulatorText.T("MatterManipulator.Command.BatchSizeDesc"),
+                        icon = CommandIcon(),
+                        action = ToggleBatchCount
+                    };
+                }
+
                 if (TargetSupportsStuff)
                 {
                     yield return new Command_Action
@@ -557,6 +583,7 @@ namespace MatterManipulator
             progressTicks = 0;
             selectedQuality = RandomQualityMode;
             cycleQuality = RandomQualityMode;
+            batchCount = DefaultBatchCount;
             Messages.Message(MatterManipulatorText.T("MatterManipulator.Message.ProductSelected", TargetLabel()), this, MessageTypeDefOf.TaskCompletion, false);
         }
 
@@ -589,6 +616,23 @@ namespace MatterManipulator
             return repeatProduction ? MatterManipulatorText.T("MatterManipulator.Mode.Repeat") : MatterManipulatorText.T("MatterManipulator.Mode.MakeOne");
         }
 
+        private void ToggleBatchCount()
+        {
+            var choices = BatchCountModesFor(targetDef).ToList();
+            if (choices.Count <= 1)
+            {
+                batchCount = DefaultBatchCount;
+                return;
+            }
+
+            var current = ActiveBatchCount;
+            var index = choices.IndexOf(current);
+            batchCount = choices[(index + 1 + choices.Count) % choices.Count];
+            progressTicks = 0;
+            cycleQuality = RandomQualityMode;
+            Messages.Message(MatterManipulatorText.T("MatterManipulator.Message.BatchSelected", ActiveBatchCount.ToString()), this, MessageTypeDefOf.TaskCompletion, false);
+        }
+
         public void SetQualityMode(int qualityMode)
         {
             if (qualityMode != RandomQualityMode && !QualityChoices.Contains((QualityCategory)qualityMode))
@@ -614,6 +658,7 @@ namespace MatterManipulator
             progressTicks = 0;
             selectedQuality = RandomQualityMode;
             cycleQuality = RandomQualityMode;
+            batchCount = DefaultBatchCount;
         }
 
         private void AbsorbHopperFeedstock()
@@ -703,7 +748,7 @@ namespace MatterManipulator
         private bool TryFinishProduct()
         {
             var productQuality = TargetSupportsQuality ? (QualityCategory?)CurrentCycleQualityForTiming() : null;
-            var product = MakeProduct(targetDef, targetStuff, productQuality);
+            var product = MakeProduct(targetDef, targetStuff, productQuality, ActiveBatchCount);
             if (product == null)
             {
                 Messages.Message(MatterManipulatorText.T("MatterManipulator.Message.MakeFailed"), this, MessageTypeDefOf.RejectInput, false);
@@ -722,12 +767,12 @@ namespace MatterManipulator
             return true;
         }
 
-        private static Thing MakeProduct(ThingDef def, ThingDef stuff, QualityCategory? qualityToSet)
+        private static Thing MakeProduct(ThingDef def, ThingDef stuff, QualityCategory? qualityToSet, int stackCount)
         {
             try
             {
                 var product = ThingMaker.MakeThing(def, def.MadeFromStuff ? stuff : null);
-                product.stackCount = 1;
+                product.stackCount = Mathf.Clamp(stackCount, DefaultBatchCount, Mathf.Max(DefaultBatchCount, def.stackLimit));
 
                 var quality = product.TryGetComp<CompQuality>();
                 if (quality != null && qualityToSet.HasValue)
@@ -832,6 +877,23 @@ namespace MatterManipulator
             }
         }
 
+        public static IEnumerable<int> BatchCountModesFor(ThingDef def)
+        {
+            if (!SupportsBatching(def))
+            {
+                yield return DefaultBatchCount;
+                yield break;
+            }
+
+            for (var i = 0; i < BatchCountChoices.Length; i++)
+            {
+                if (BatchCountChoices[i] <= def.stackLimit)
+                {
+                    yield return BatchCountChoices[i];
+                }
+            }
+        }
+
         public static string QualityLabelForMode(int qualityMode)
         {
             return qualityMode == RandomQualityMode ? MatterManipulatorText.T("MatterManipulator.Quality.Random") : QualityLabel((QualityCategory)qualityMode);
@@ -903,6 +965,30 @@ namespace MatterManipulator
         private static bool SupportsQuality(ThingDef def)
         {
             return def != null && def.HasComp(typeof(CompQuality));
+        }
+
+        private static bool SupportsBatching(ThingDef def)
+        {
+            return def != null && def.stackLimit > DefaultBatchCount;
+        }
+
+        private static int ClampBatchCount(ThingDef def, int count)
+        {
+            if (!SupportsBatching(def))
+            {
+                return DefaultBatchCount;
+            }
+
+            var best = DefaultBatchCount;
+            for (var i = 0; i < BatchCountChoices.Length; i++)
+            {
+                if (BatchCountChoices[i] <= def.stackLimit && BatchCountChoices[i] <= count)
+                {
+                    best = BatchCountChoices[i];
+                }
+            }
+
+            return best;
         }
 
         private static string QualityLabel(QualityCategory quality)
