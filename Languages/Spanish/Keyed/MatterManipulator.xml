@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.ModName>Manipulador de materia</MatterManipulator.ModName>
+  <MatterManipulator.NoneSelected>no seleccionado</MatterManipulator.NoneSelected>
+
+  <MatterManipulator.Settings.General>Ajustes generales</MatterManipulator.Settings.General>
+  <MatterManipulator.Settings.PowerConsumption>Consumo de energía, W</MatterManipulator.Settings.PowerConsumption>
+  <MatterManipulator.Settings.InputMassFactor>Masa de entrada relativa al resultado</MatterManipulator.Settings.InputMassFactor>
+  <MatterManipulator.Settings.HoursPerKg>Horas de trabajo por kg</MatterManipulator.Settings.HoursPerKg>
+  <MatterManipulator.Settings.ResearchCost>Coste de investigación</MatterManipulator.Settings.ResearchCost>
+  <MatterManipulator.Settings.ShowResultNotifications>Mostrar notificaciones de resultado</MatterManipulator.Settings.ShowResultNotifications>
+  <MatterManipulator.Settings.QualityMultipliers>Multiplicadores de tiempo por calidad</MatterManipulator.Settings.QualityMultipliers>
+  <MatterManipulator.Settings.ResetDefaults>Restablecer valores predeterminados</MatterManipulator.Settings.ResetDefaults>
+
+  <MatterManipulator.Quality.Random>Aleatoria</MatterManipulator.Quality.Random>
+  <MatterManipulator.Quality.RandomEveryCycle>aleatoria en cada ciclo</MatterManipulator.Quality.RandomEveryCycle>
+  <MatterManipulator.Quality.Awful>Horrible</MatterManipulator.Quality.Awful>
+  <MatterManipulator.Quality.Poor>Mala</MatterManipulator.Quality.Poor>
+  <MatterManipulator.Quality.Normal>Normal</MatterManipulator.Quality.Normal>
+  <MatterManipulator.Quality.Good>Buena</MatterManipulator.Quality.Good>
+  <MatterManipulator.Quality.Excellent>Excelente</MatterManipulator.Quality.Excellent>
+  <MatterManipulator.Quality.Masterwork>Obra maestra</MatterManipulator.Quality.Masterwork>
+  <MatterManipulator.Quality.Legendary>Legendaria</MatterManipulator.Quality.Legendary>
+
+  <MatterManipulator.Inspect.Target>Objetivo: {0}</MatterManipulator.Inspect.Target>
+  <MatterManipulator.Inspect.RequiredMass>Masa requerida: {0} kg</MatterManipulator.Inspect.RequiredMass>
+  <MatterManipulator.Inspect.MassBuffer>Reserva de masa: {0} kg</MatterManipulator.Inspect.MassBuffer>
+  <MatterManipulator.Inspect.CycleTime>Tiempo de ciclo: {0}</MatterManipulator.Inspect.CycleTime>
+  <MatterManipulator.Inspect.Mode>Modo: {0}</MatterManipulator.Inspect.Mode>
+  <MatterManipulator.Inspect.BatchSize>Tamaño del lote: {0}</MatterManipulator.Inspect.BatchSize>
+  <MatterManipulator.Inspect.Quality>Calidad: {0}</MatterManipulator.Inspect.Quality>
+  <MatterManipulator.Inspect.CycleQuality>Calidad del ciclo: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.Hoppers>Tolvas: {0}</MatterManipulator.Inspect.Hoppers>
+
+  <MatterManipulator.Status.SelectItem>Estado: selecciona un objeto.</MatterManipulator.Status.SelectItem>
+  <MatterManipulator.Status.NoPower>Estado: sin energía.</MatterManipulator.Status.NoPower>
+  <MatterManipulator.Status.NeedsHopper>Estado: necesita una tolva de materia adyacente.</MatterManipulator.Status.NeedsHopper>
+  <MatterManipulator.Status.WaitingResources>Estado: esperando recursos ({0} kg).</MatterManipulator.Status.WaitingResources>
+  <MatterManipulator.Status.Working>Estado: trabajando ({0}%).</MatterManipulator.Status.Working>
+
+  <MatterManipulator.Progress.NoPower>sin energía</MatterManipulator.Progress.NoPower>
+  <MatterManipulator.Progress.Feedstock>materia prima {0}%</MatterManipulator.Progress.Feedstock>
+
+  <MatterManipulator.Command.SelectProduct>Seleccionar producto</MatterManipulator.Command.SelectProduct>
+  <MatterManipulator.Command.SelectProductDesc>Selecciona el objeto que creará el manipulador de materia. Después de la selección, la máquina consumirá recursos por masa e iniciará su ciclo cuando tenga energía.</MatterManipulator.Command.SelectProductDesc>
+  <MatterManipulator.Command.BuildHopper>Construir tolva</MatterManipulator.Command.BuildHopper>
+  <MatterManipulator.Command.BuildHopperDesc>Activa el modo de colocación para una tolva de materia junto al manipulador.</MatterManipulator.Command.BuildHopperDesc>
+  <MatterManipulator.Command.Mode>Modo: {0}</MatterManipulator.Command.Mode>
+  <MatterManipulator.Command.ModeDesc>Cambia el modo de producción: crear un lote y detenerse, o repetir la producción mientras haya recursos.</MatterManipulator.Command.ModeDesc>
+  <MatterManipulator.Command.BatchSize>Lote: {0}</MatterManipulator.Command.BatchSize>
+  <MatterManipulator.Command.BatchSizeDesc>Cambia el tamaño de pila creado por cada ciclo. Solo disponible para objetos apilables.</MatterManipulator.Command.BatchSizeDesc>
+  <MatterManipulator.Command.Material>Material: {0}</MatterManipulator.Command.Material>
+  <MatterManipulator.Command.MaterialDesc>Selecciona el material del objeto terminado. El multiplicador del material se aplica al tiempo de ciclo.</MatterManipulator.Command.MaterialDesc>
+  <MatterManipulator.Command.Quality>Calidad: {0}</MatterManipulator.Command.Quality>
+  <MatterManipulator.Command.QualityDesc>Selecciona la calidad del objeto terminado. En modo de calidad aleatoria, cada ciclo vuelve a tirar la calidad y aplica el multiplicador de tiempo correspondiente.</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.ClearTarget>Borrar objetivo</MatterManipulator.Command.ClearTarget>
+  <MatterManipulator.Command.ClearTargetDesc>Cancela el objeto seleccionado actualmente. La reserva de masa acumulada permanecerá dentro de la máquina.</MatterManipulator.Command.ClearTargetDesc>
+
+  <MatterManipulator.Message.ProductSelected>Manipulador de materia: producto seleccionado {0}.</MatterManipulator.Message.ProductSelected>
+  <MatterManipulator.Message.MaterialSelected>Manipulador de materia: material {0}.</MatterManipulator.Message.MaterialSelected>
+  <MatterManipulator.Message.ModeSelected>Manipulador de materia: modo {0}.</MatterManipulator.Message.ModeSelected>
+  <MatterManipulator.Message.BatchSelected>Manipulador de materia: tamaño del lote {0}.</MatterManipulator.Message.BatchSelected>
+  <MatterManipulator.Message.QualitySelected>Manipulador de materia: calidad {0}.</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.MakeFailed>El manipulador de materia no pudo crear el objeto seleccionado.</MatterManipulator.Message.MakeFailed>
+  <MatterManipulator.Message.NoOutputSpace>El manipulador de materia no encontró espacio para el objeto terminado.</MatterManipulator.Message.NoOutputSpace>
+  <MatterManipulator.Message.Created>El manipulador de materia creó {0}.</MatterManipulator.Message.Created>
+
+  <MatterManipulator.Mode.Repeat>repetir</MatterManipulator.Mode.Repeat>
+  <MatterManipulator.Mode.MakeOne>crear una vez</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.Time.Hours>{0} h</MatterManipulator.Time.Hours>
+  <MatterManipulator.Time.HourRange>{0}-{1} h</MatterManipulator.Time.HourRange>
+  <MatterManipulator.Time.HoursMultiplier>{0} h (x{1})</MatterManipulator.Time.HoursMultiplier>
+
+  <MatterManipulator.Dialog.Quality.Title>Seleccionar calidad</MatterManipulator.Dialog.Quality.Title>
+  <MatterManipulator.Dialog.Quality.Description>El multiplicador se aplica al tiempo de ciclo. La calidad aleatoria se tira por separado para cada ciclo nuevo.</MatterManipulator.Dialog.Quality.Description>
+  <MatterManipulator.Dialog.Stuff.Title>Seleccionar material</MatterManipulator.Dialog.Stuff.Title>
+  <MatterManipulator.Dialog.Stuff.Found>Encontrados: {0}. El multiplicador se aplica al tiempo de ciclo.</MatterManipulator.Dialog.Stuff.Found>
+  <MatterManipulator.Dialog.Stuff.Info>x{0} / {1} h</MatterManipulator.Dialog.Stuff.Info>
+  <MatterManipulator.Dialog.Product.Title>Seleccionar producto</MatterManipulator.Dialog.Product.Title>
+  <MatterManipulator.Dialog.Product.Found>Encontrados: {0}. La búsqueda usa la etiqueta y el defName.</MatterManipulator.Dialog.Product.Found>
+  <MatterManipulator.Dialog.Product.Info>{0} kg / {1} h</MatterManipulator.Dialog.Product.Info>
+
+  <MatterManipulator.Button.Selected>Seleccionado</MatterManipulator.Button.Selected>
+  <MatterManipulator.Button.Select>Seleccionar</MatterManipulator.Button.Select>
+  <MatterManipulator.Button.Material>Material</MatterManipulator.Button.Material>
+</LanguageData>

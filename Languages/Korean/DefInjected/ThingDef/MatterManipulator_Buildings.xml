@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>물질 조작기</MatterManipulator.label>
+  <MatterManipulator.description>물질을 재구성하는 자율 기계입니다. 아이템을 선택하고 결과물 질량의 두 배에 해당하는 아무 자원을 넣으면, 이 건물은 작업자 없이 작동합니다. 각 주기는 완성품 1kg당 8시간이 걸립니다.</MatterManipulator.description>
+  <MatterHopper.label>물질 투입기</MatterHopper.label>
+  <MatterHopper.description>물질 조작기에 원료를 공급하는 투입기입니다. 영양죽 투입기와 달리 거의 모든 보관 가능한 아이템이나 자원을 받습니다.</MatterHopper.description>
+</LanguageData>

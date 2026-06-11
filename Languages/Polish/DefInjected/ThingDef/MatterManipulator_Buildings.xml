@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>manipulator materii</MatterManipulator.label>
+  <MatterManipulator.description>Autonomiczna maszyna do rekonstrukcji materii. Wybierz przedmiot, załaduj dowolne zasoby o łącznej masie równej dwukrotności masy wyjściowej, a budynek będzie pracował bez operatora. Każdy cykl trwa 8 godzin na kg gotowego produktu.</MatterManipulator.description>
+  <MatterHopper.label>lej materii</MatterHopper.label>
+  <MatterHopper.description>Lej podający surowiec do manipulatora materii. W przeciwieństwie do leja pasty odżywczej przyjmuje prawie każdy magazynowalny przedmiot lub zasób.</MatterHopper.description>
+</LanguageData>

@@ -12,7 +12,7 @@ Matter Manipulator is a RimWorld 1.6 mod that adds a late-game autonomous produc
 - One-time or infinite-repeat production modes.
 - Optional result notifications.
 - In-game mod settings for power, work speed, input mass factor, research cost, and quality multipliers.
-- English and Russian localization.
+- Localization: English, Russian, German, French, Spanish, Italian, Polish, Portuguese Brazilian, Turkish, Japanese, Korean, Simplified Chinese, and Traditional Chinese.
 
 ## Defaults
 

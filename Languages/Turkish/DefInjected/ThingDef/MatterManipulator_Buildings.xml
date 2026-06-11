@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>madde manipülatörü</MatterManipulator.label>
+  <MatterManipulator.description>Maddeyi yeniden yapılandıran otonom bir makine. Bir eşya seçin, toplam kütlesi çıktı kütlesinin iki katı olan herhangi kaynakları yükleyin; bina operatör olmadan çalışır. Her döngü, bitmiş ürünün kg başına 8 saat sürer.</MatterManipulator.description>
+  <MatterHopper.label>madde haznesi</MatterHopper.label>
+  <MatterHopper.description>Madde manipülatörüne hammadde besleyen bir hazne. Besin macunu haznesinden farklı olarak, neredeyse her depolanabilir eşyayı veya kaynağı kabul eder.</MatterHopper.description>
+</LanguageData>

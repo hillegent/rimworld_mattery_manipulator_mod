@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>manipulador de matéria</MatterManipulator.label>
+  <MatterManipulator.description>Uma máquina autônoma para reconstruir matéria. Selecione um item, carregue quaisquer recursos com massa total igual ao dobro da massa de saída, e a construção trabalhará sem operador. Cada ciclo leva 8 horas por kg de produto final.</MatterManipulator.description>
+  <MatterHopper.label>funil de matéria</MatterHopper.label>
+  <MatterHopper.description>Um funil para alimentar matéria-prima no manipulador de matéria. Diferente de um funil de pasta nutritiva, ele aceita quase qualquer item ou recurso armazenável.</MatterHopper.description>
+</LanguageData>

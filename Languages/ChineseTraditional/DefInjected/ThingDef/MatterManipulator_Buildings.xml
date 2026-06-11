@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>物質操控器</MatterManipulator.label>
+  <MatterManipulator.description>一台用於重構物質的自動機器。選擇一個物品，裝入總質量等於產物質量兩倍的任意資源，建築就會在無人操作的情況下工作。每個循環每公斤成品需要 8 小時。</MatterManipulator.description>
+  <MatterHopper.label>物質漏斗</MatterHopper.label>
+  <MatterHopper.description>用於向物質操控器供給原料的漏斗。與營養膏漏斗不同，它幾乎接受任何可儲存物品或資源。</MatterHopper.description>
+</LanguageData>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>Materiemanipulator</MatterManipulator.label>
+  <MatterManipulator.description>Eine autonome Maschine zur Rekonstruktion von Materie. Wähle einen Gegenstand, lade beliebige Ressourcen mit einer Gesamtmasse vom Doppelten der Ausgabemasse, und das Gebäude arbeitet ohne Bediener. Jeder Zyklus dauert 8 Stunden pro kg fertigem Produkt.</MatterManipulator.description>
+  <MatterHopper.label>Materietrichter</MatterHopper.label>
+  <MatterHopper.description>Ein Trichter, der Rohmaterial in einen Materiemanipulator einspeist. Anders als ein Nährpasten-Trichter akzeptiert er fast jeden lagerbaren Gegenstand oder jede Ressource.</MatterHopper.description>
+</LanguageData>

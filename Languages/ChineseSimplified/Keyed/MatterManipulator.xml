@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.ModName>物质操控器</MatterManipulator.ModName>
+  <MatterManipulator.NoneSelected>未选择</MatterManipulator.NoneSelected>
+
+  <MatterManipulator.Settings.General>常规设置</MatterManipulator.Settings.General>
+  <MatterManipulator.Settings.PowerConsumption>能耗，W</MatterManipulator.Settings.PowerConsumption>
+  <MatterManipulator.Settings.InputMassFactor>输入质量相对于产物</MatterManipulator.Settings.InputMassFactor>
+  <MatterManipulator.Settings.HoursPerKg>每千克工作小时</MatterManipulator.Settings.HoursPerKg>
+  <MatterManipulator.Settings.ResearchCost>研究消耗</MatterManipulator.Settings.ResearchCost>
+  <MatterManipulator.Settings.ShowResultNotifications>显示结果通知</MatterManipulator.Settings.ShowResultNotifications>
+  <MatterManipulator.Settings.QualityMultipliers>品质时间倍率</MatterManipulator.Settings.QualityMultipliers>
+  <MatterManipulator.Settings.ResetDefaults>重置为默认值</MatterManipulator.Settings.ResetDefaults>
+
+  <MatterManipulator.Quality.Random>随机</MatterManipulator.Quality.Random>
+  <MatterManipulator.Quality.RandomEveryCycle>每个循环随机</MatterManipulator.Quality.RandomEveryCycle>
+  <MatterManipulator.Quality.Awful>糟糕</MatterManipulator.Quality.Awful>
+  <MatterManipulator.Quality.Poor>较差</MatterManipulator.Quality.Poor>
+  <MatterManipulator.Quality.Normal>普通</MatterManipulator.Quality.Normal>
+  <MatterManipulator.Quality.Good>良好</MatterManipulator.Quality.Good>
+  <MatterManipulator.Quality.Excellent>优秀</MatterManipulator.Quality.Excellent>
+  <MatterManipulator.Quality.Masterwork>杰作</MatterManipulator.Quality.Masterwork>
+  <MatterManipulator.Quality.Legendary>传奇</MatterManipulator.Quality.Legendary>
+
+  <MatterManipulator.Inspect.Target>目标：{0}</MatterManipulator.Inspect.Target>
+  <MatterManipulator.Inspect.RequiredMass>所需质量：{0} kg</MatterManipulator.Inspect.RequiredMass>
+  <MatterManipulator.Inspect.MassBuffer>质量缓存：{0} kg</MatterManipulator.Inspect.MassBuffer>
+  <MatterManipulator.Inspect.CycleTime>循环时间：{0}</MatterManipulator.Inspect.CycleTime>
+  <MatterManipulator.Inspect.Mode>模式：{0}</MatterManipulator.Inspect.Mode>
+  <MatterManipulator.Inspect.BatchSize>批量大小：{0}</MatterManipulator.Inspect.BatchSize>
+  <MatterManipulator.Inspect.Quality>品质：{0}</MatterManipulator.Inspect.Quality>
+  <MatterManipulator.Inspect.CycleQuality>循环品质：{0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.Hoppers>漏斗：{0}</MatterManipulator.Inspect.Hoppers>
+
+  <MatterManipulator.Status.SelectItem>状态：选择一个物品。</MatterManipulator.Status.SelectItem>
+  <MatterManipulator.Status.NoPower>状态：无电力。</MatterManipulator.Status.NoPower>
+  <MatterManipulator.Status.NeedsHopper>状态：需要相邻的物质漏斗。</MatterManipulator.Status.NeedsHopper>
+  <MatterManipulator.Status.WaitingResources>状态：等待资源（{0} kg）。</MatterManipulator.Status.WaitingResources>
+  <MatterManipulator.Status.Working>状态：工作中（{0}%）。</MatterManipulator.Status.Working>
+
+  <MatterManipulator.Progress.NoPower>无电力</MatterManipulator.Progress.NoPower>
+  <MatterManipulator.Progress.Feedstock>原料 {0}%</MatterManipulator.Progress.Feedstock>
+
+  <MatterManipulator.Command.SelectProduct>选择产物</MatterManipulator.Command.SelectProduct>
+  <MatterManipulator.Command.SelectProductDesc>选择物质操控器要制造的物品。选择后，机器会按质量消耗资源，并在通电时开始循环。</MatterManipulator.Command.SelectProductDesc>
+  <MatterManipulator.Command.BuildHopper>建造漏斗</MatterManipulator.Command.BuildHopper>
+  <MatterManipulator.Command.BuildHopperDesc>进入在操控器旁放置物质漏斗的模式。</MatterManipulator.Command.BuildHopperDesc>
+  <MatterManipulator.Command.Mode>模式：{0}</MatterManipulator.Command.Mode>
+  <MatterManipulator.Command.ModeDesc>切换生产模式：制造一批后停止，或在资源可用时重复生产。</MatterManipulator.Command.ModeDesc>
+  <MatterManipulator.Command.BatchSize>批量：{0}</MatterManipulator.Command.BatchSize>
+  <MatterManipulator.Command.BatchSizeDesc>切换每个循环创建的堆叠数量。仅适用于可堆叠物品。</MatterManipulator.Command.BatchSizeDesc>
+  <MatterManipulator.Command.Material>材料：{0}</MatterManipulator.Command.Material>
+  <MatterManipulator.Command.MaterialDesc>选择成品的材料。材料倍率会应用到循环时间。</MatterManipulator.Command.MaterialDesc>
+  <MatterManipulator.Command.Quality>品质：{0}</MatterManipulator.Command.Quality>
+  <MatterManipulator.Command.QualityDesc>选择成品的品质。在随机品质模式下，每个循环都会重新抽取品质并应用对应的时间倍率。</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.ClearTarget>清除目标</MatterManipulator.Command.ClearTarget>
+  <MatterManipulator.Command.ClearTargetDesc>取消当前选择的物品。已积累的质量缓存会留在机器内部。</MatterManipulator.Command.ClearTargetDesc>
+
+  <MatterManipulator.Message.ProductSelected>物质操控器：已选择产物 {0}。</MatterManipulator.Message.ProductSelected>
+  <MatterManipulator.Message.MaterialSelected>物质操控器：材料 {0}。</MatterManipulator.Message.MaterialSelected>
+  <MatterManipulator.Message.ModeSelected>物质操控器：模式 {0}。</MatterManipulator.Message.ModeSelected>
+  <MatterManipulator.Message.BatchSelected>物质操控器：批量大小 {0}。</MatterManipulator.Message.BatchSelected>
+  <MatterManipulator.Message.QualitySelected>物质操控器：品质 {0}。</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.MakeFailed>物质操控器无法创建所选物品。</MatterManipulator.Message.MakeFailed>
+  <MatterManipulator.Message.NoOutputSpace>物质操控器找不到放置成品的空间。</MatterManipulator.Message.NoOutputSpace>
+  <MatterManipulator.Message.Created>物质操控器创建了 {0}。</MatterManipulator.Message.Created>
+
+  <MatterManipulator.Mode.Repeat>重复</MatterManipulator.Mode.Repeat>
+  <MatterManipulator.Mode.MakeOne>生产一次</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.Time.Hours>{0} 小时</MatterManipulator.Time.Hours>
+  <MatterManipulator.Time.HourRange>{0}-{1} 小时</MatterManipulator.Time.HourRange>
+  <MatterManipulator.Time.HoursMultiplier>{0} 小时 (x{1})</MatterManipulator.Time.HoursMultiplier>
+
+  <MatterManipulator.Dialog.Quality.Title>选择品质</MatterManipulator.Dialog.Quality.Title>
+  <MatterManipulator.Dialog.Quality.Description>倍率会应用到循环时间。随机品质会在每个新循环单独抽取。</MatterManipulator.Dialog.Quality.Description>
+  <MatterManipulator.Dialog.Stuff.Title>选择材料</MatterManipulator.Dialog.Stuff.Title>
+  <MatterManipulator.Dialog.Stuff.Found>找到：{0}。倍率会应用到循环时间。</MatterManipulator.Dialog.Stuff.Found>
+  <MatterManipulator.Dialog.Stuff.Info>x{0} / {1} 小时</MatterManipulator.Dialog.Stuff.Info>
+  <MatterManipulator.Dialog.Product.Title>选择产物</MatterManipulator.Dialog.Product.Title>
+  <MatterManipulator.Dialog.Product.Found>找到：{0}。搜索使用标签和 defName。</MatterManipulator.Dialog.Product.Found>
+  <MatterManipulator.Dialog.Product.Info>{0} kg / {1} 小时</MatterManipulator.Dialog.Product.Info>
+
+  <MatterManipulator.Button.Selected>已选择</MatterManipulator.Button.Selected>
+  <MatterManipulator.Button.Select>选择</MatterManipulator.Button.Select>
+  <MatterManipulator.Button.Material>材料</MatterManipulator.Button.Material>
+</LanguageData>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.ModName>Madde Manipülatörü</MatterManipulator.ModName>
+  <MatterManipulator.NoneSelected>seçilmedi</MatterManipulator.NoneSelected>
+
+  <MatterManipulator.Settings.General>Genel ayarlar</MatterManipulator.Settings.General>
+  <MatterManipulator.Settings.PowerConsumption>Güç tüketimi, W</MatterManipulator.Settings.PowerConsumption>
+  <MatterManipulator.Settings.InputMassFactor>Sonuca göre giriş kütlesi</MatterManipulator.Settings.InputMassFactor>
+  <MatterManipulator.Settings.HoursPerKg>Kg başına çalışma saati</MatterManipulator.Settings.HoursPerKg>
+  <MatterManipulator.Settings.ResearchCost>Araştırma maliyeti</MatterManipulator.Settings.ResearchCost>
+  <MatterManipulator.Settings.ShowResultNotifications>Sonuç bildirimlerini göster</MatterManipulator.Settings.ShowResultNotifications>
+  <MatterManipulator.Settings.QualityMultipliers>Kalite zaman çarpanları</MatterManipulator.Settings.QualityMultipliers>
+  <MatterManipulator.Settings.ResetDefaults>Varsayılanlara sıfırla</MatterManipulator.Settings.ResetDefaults>
+
+  <MatterManipulator.Quality.Random>Rastgele</MatterManipulator.Quality.Random>
+  <MatterManipulator.Quality.RandomEveryCycle>her döngüde rastgele</MatterManipulator.Quality.RandomEveryCycle>
+  <MatterManipulator.Quality.Awful>Berbat</MatterManipulator.Quality.Awful>
+  <MatterManipulator.Quality.Poor>Kötü</MatterManipulator.Quality.Poor>
+  <MatterManipulator.Quality.Normal>Normal</MatterManipulator.Quality.Normal>
+  <MatterManipulator.Quality.Good>İyi</MatterManipulator.Quality.Good>
+  <MatterManipulator.Quality.Excellent>Mükemmel</MatterManipulator.Quality.Excellent>
+  <MatterManipulator.Quality.Masterwork>Ustalık eseri</MatterManipulator.Quality.Masterwork>
+  <MatterManipulator.Quality.Legendary>Efsanevi</MatterManipulator.Quality.Legendary>
+
+  <MatterManipulator.Inspect.Target>Hedef: {0}</MatterManipulator.Inspect.Target>
+  <MatterManipulator.Inspect.RequiredMass>Gerekli kütle: {0} kg</MatterManipulator.Inspect.RequiredMass>
+  <MatterManipulator.Inspect.MassBuffer>Kütle tamponu: {0} kg</MatterManipulator.Inspect.MassBuffer>
+  <MatterManipulator.Inspect.CycleTime>Döngü süresi: {0}</MatterManipulator.Inspect.CycleTime>
+  <MatterManipulator.Inspect.Mode>Mod: {0}</MatterManipulator.Inspect.Mode>
+  <MatterManipulator.Inspect.BatchSize>Parti boyutu: {0}</MatterManipulator.Inspect.BatchSize>
+  <MatterManipulator.Inspect.Quality>Kalite: {0}</MatterManipulator.Inspect.Quality>
+  <MatterManipulator.Inspect.CycleQuality>Döngü kalitesi: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.Hoppers>Hazneler: {0}</MatterManipulator.Inspect.Hoppers>
+
+  <MatterManipulator.Status.SelectItem>Durum: bir eşya seçin.</MatterManipulator.Status.SelectItem>
+  <MatterManipulator.Status.NoPower>Durum: güç yok.</MatterManipulator.Status.NoPower>
+  <MatterManipulator.Status.NeedsHopper>Durum: bitişik bir madde haznesi gerekiyor.</MatterManipulator.Status.NeedsHopper>
+  <MatterManipulator.Status.WaitingResources>Durum: kaynak bekleniyor ({0} kg).</MatterManipulator.Status.WaitingResources>
+  <MatterManipulator.Status.Working>Durum: çalışıyor ({0}%).</MatterManipulator.Status.Working>
+
+  <MatterManipulator.Progress.NoPower>güç yok</MatterManipulator.Progress.NoPower>
+  <MatterManipulator.Progress.Feedstock>hammadde {0}%</MatterManipulator.Progress.Feedstock>
+
+  <MatterManipulator.Command.SelectProduct>Ürün seç</MatterManipulator.Command.SelectProduct>
+  <MatterManipulator.Command.SelectProductDesc>Madde manipülatörünün oluşturacağı eşyayı seçin. Seçimden sonra makine kaynakları kütleye göre tüketir ve güç varsa döngüsünü başlatır.</MatterManipulator.Command.SelectProductDesc>
+  <MatterManipulator.Command.BuildHopper>Hazne inşa et</MatterManipulator.Command.BuildHopper>
+  <MatterManipulator.Command.BuildHopperDesc>Manipülatörün yanına bir madde haznesi yerleştirme modunu açar.</MatterManipulator.Command.BuildHopperDesc>
+  <MatterManipulator.Command.Mode>Mod: {0}</MatterManipulator.Command.Mode>
+  <MatterManipulator.Command.ModeDesc>Üretim modunu değiştirir: bir parti üretip durur veya kaynaklar olduğu sürece üretimi tekrarlar.</MatterManipulator.Command.ModeDesc>
+  <MatterManipulator.Command.BatchSize>Parti: {0}</MatterManipulator.Command.BatchSize>
+  <MatterManipulator.Command.BatchSizeDesc>Her döngüde oluşturulan yığın boyutunu değiştirir. Yalnızca yığınlanabilen eşyalar için kullanılabilir.</MatterManipulator.Command.BatchSizeDesc>
+  <MatterManipulator.Command.Material>Malzeme: {0}</MatterManipulator.Command.Material>
+  <MatterManipulator.Command.MaterialDesc>Bitmiş eşyanın malzemesini seçin. Malzeme çarpanı döngü süresine uygulanır.</MatterManipulator.Command.MaterialDesc>
+  <MatterManipulator.Command.Quality>Kalite: {0}</MatterManipulator.Command.Quality>
+  <MatterManipulator.Command.QualityDesc>Bitmiş eşyanın kalitesini seçin. Rastgele kalite modunda her döngü kaliteyi yeniden belirler ve uygun zaman çarpanını uygular.</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.ClearTarget>Hedefi temizle</MatterManipulator.Command.ClearTarget>
+  <MatterManipulator.Command.ClearTargetDesc>Geçerli seçili eşyayı iptal eder. Biriken kütle tamponu makinenin içinde kalır.</MatterManipulator.Command.ClearTargetDesc>
+
+  <MatterManipulator.Message.ProductSelected>Madde manipülatörü: ürün seçildi {0}.</MatterManipulator.Message.ProductSelected>
+  <MatterManipulator.Message.MaterialSelected>Madde manipülatörü: malzeme {0}.</MatterManipulator.Message.MaterialSelected>
+  <MatterManipulator.Message.ModeSelected>Madde manipülatörü: mod {0}.</MatterManipulator.Message.ModeSelected>
+  <MatterManipulator.Message.BatchSelected>Madde manipülatörü: parti boyutu {0}.</MatterManipulator.Message.BatchSelected>
+  <MatterManipulator.Message.QualitySelected>Madde manipülatörü: kalite {0}.</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.MakeFailed>Madde manipülatörü seçilen eşyayı oluşturamadı.</MatterManipulator.Message.MakeFailed>
+  <MatterManipulator.Message.NoOutputSpace>Madde manipülatörü bitmiş eşya için yer bulamadı.</MatterManipulator.Message.NoOutputSpace>
+  <MatterManipulator.Message.Created>Madde manipülatörü {0} oluşturdu.</MatterManipulator.Message.Created>
+
+  <MatterManipulator.Mode.Repeat>tekrarla</MatterManipulator.Mode.Repeat>
+  <MatterManipulator.Mode.MakeOne>bir kez üret</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.Time.Hours>{0} sa.</MatterManipulator.Time.Hours>
+  <MatterManipulator.Time.HourRange>{0}-{1} sa.</MatterManipulator.Time.HourRange>
+  <MatterManipulator.Time.HoursMultiplier>{0} sa. (x{1})</MatterManipulator.Time.HoursMultiplier>
+
+  <MatterManipulator.Dialog.Quality.Title>Kalite seç</MatterManipulator.Dialog.Quality.Title>
+  <MatterManipulator.Dialog.Quality.Description>Çarpan döngü süresine uygulanır. Rastgele kalite her yeni döngü için ayrı belirlenir.</MatterManipulator.Dialog.Quality.Description>
+  <MatterManipulator.Dialog.Stuff.Title>Malzeme seç</MatterManipulator.Dialog.Stuff.Title>
+  <MatterManipulator.Dialog.Stuff.Found>Bulunan: {0}. Çarpan döngü süresine uygulanır.</MatterManipulator.Dialog.Stuff.Found>
+  <MatterManipulator.Dialog.Stuff.Info>x{0} / {1} sa.</MatterManipulator.Dialog.Stuff.Info>
+  <MatterManipulator.Dialog.Product.Title>Ürün seç</MatterManipulator.Dialog.Product.Title>
+  <MatterManipulator.Dialog.Product.Found>Bulunan: {0}. Arama etiket ve defName kullanır.</MatterManipulator.Dialog.Product.Found>
+  <MatterManipulator.Dialog.Product.Info>{0} kg / {1} sa.</MatterManipulator.Dialog.Product.Info>
+
+  <MatterManipulator.Button.Selected>Seçildi</MatterManipulator.Button.Selected>
+  <MatterManipulator.Button.Select>Seç</MatterManipulator.Button.Select>
+  <MatterManipulator.Button.Material>Malzeme</MatterManipulator.Button.Material>
+</LanguageData>

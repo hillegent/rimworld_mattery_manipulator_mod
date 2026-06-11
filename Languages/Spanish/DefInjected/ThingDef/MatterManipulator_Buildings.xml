@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>manipulador de materia</MatterManipulator.label>
+  <MatterManipulator.description>Una máquina autónoma para reconstruir materia. Selecciona un objeto, carga cualquier recurso con una masa total igual al doble de la masa de salida, y el edificio trabajará sin operador. Cada ciclo tarda 8 horas por kg de producto terminado.</MatterManipulator.description>
+  <MatterHopper.label>tolva de materia</MatterHopper.label>
+  <MatterHopper.description>Una tolva para alimentar materia prima al manipulador de materia. A diferencia de una tolva de pasta nutritiva, acepta casi cualquier objeto o recurso almacenable.</MatterHopper.description>
+</LanguageData>

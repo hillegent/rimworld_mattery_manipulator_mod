@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>manipulateur de matière</MatterManipulator.label>
+  <MatterManipulator.description>Une machine autonome pour reconstruire la matière. Sélectionnez un objet, chargez des ressources quelconques d'une masse totale égale au double de la masse produite, et le bâtiment travaillera sans opérateur. Chaque cycle prend 8 heures par kg de produit fini.</MatterManipulator.description>
+  <MatterHopper.label>trémie de matière</MatterHopper.label>
+  <MatterHopper.description>Une trémie qui alimente un manipulateur de matière en matière première. Contrairement à une trémie de pâte nutritive, elle accepte presque tous les objets ou ressources stockables.</MatterHopper.description>
+</LanguageData>

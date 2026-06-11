@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.ModName>Manipulator materii</MatterManipulator.ModName>
+  <MatterManipulator.NoneSelected>nie wybrano</MatterManipulator.NoneSelected>
+
+  <MatterManipulator.Settings.General>Ustawienia ogólne</MatterManipulator.Settings.General>
+  <MatterManipulator.Settings.PowerConsumption>Zużycie energii, W</MatterManipulator.Settings.PowerConsumption>
+  <MatterManipulator.Settings.InputMassFactor>Masa wejściowa względem wyniku</MatterManipulator.Settings.InputMassFactor>
+  <MatterManipulator.Settings.HoursPerKg>Godziny pracy na kg</MatterManipulator.Settings.HoursPerKg>
+  <MatterManipulator.Settings.ResearchCost>Koszt badań</MatterManipulator.Settings.ResearchCost>
+  <MatterManipulator.Settings.ShowResultNotifications>Pokazuj powiadomienia o wyniku</MatterManipulator.Settings.ShowResultNotifications>
+  <MatterManipulator.Settings.QualityMultipliers>Mnożniki czasu jakości</MatterManipulator.Settings.QualityMultipliers>
+  <MatterManipulator.Settings.ResetDefaults>Przywróć domyślne</MatterManipulator.Settings.ResetDefaults>
+
+  <MatterManipulator.Quality.Random>Losowa</MatterManipulator.Quality.Random>
+  <MatterManipulator.Quality.RandomEveryCycle>losowa w każdym cyklu</MatterManipulator.Quality.RandomEveryCycle>
+  <MatterManipulator.Quality.Awful>Okropna</MatterManipulator.Quality.Awful>
+  <MatterManipulator.Quality.Poor>Słaba</MatterManipulator.Quality.Poor>
+  <MatterManipulator.Quality.Normal>Normalna</MatterManipulator.Quality.Normal>
+  <MatterManipulator.Quality.Good>Dobra</MatterManipulator.Quality.Good>
+  <MatterManipulator.Quality.Excellent>Doskonała</MatterManipulator.Quality.Excellent>
+  <MatterManipulator.Quality.Masterwork>Arcydzieło</MatterManipulator.Quality.Masterwork>
+  <MatterManipulator.Quality.Legendary>Legendarna</MatterManipulator.Quality.Legendary>
+
+  <MatterManipulator.Inspect.Target>Cel: {0}</MatterManipulator.Inspect.Target>
+  <MatterManipulator.Inspect.RequiredMass>Wymagana masa: {0} kg</MatterManipulator.Inspect.RequiredMass>
+  <MatterManipulator.Inspect.MassBuffer>Bufor masy: {0} kg</MatterManipulator.Inspect.MassBuffer>
+  <MatterManipulator.Inspect.CycleTime>Czas cyklu: {0}</MatterManipulator.Inspect.CycleTime>
+  <MatterManipulator.Inspect.Mode>Tryb: {0}</MatterManipulator.Inspect.Mode>
+  <MatterManipulator.Inspect.BatchSize>Rozmiar partii: {0}</MatterManipulator.Inspect.BatchSize>
+  <MatterManipulator.Inspect.Quality>Jakość: {0}</MatterManipulator.Inspect.Quality>
+  <MatterManipulator.Inspect.CycleQuality>Jakość cyklu: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.Hoppers>Leje: {0}</MatterManipulator.Inspect.Hoppers>
+
+  <MatterManipulator.Status.SelectItem>Status: wybierz przedmiot.</MatterManipulator.Status.SelectItem>
+  <MatterManipulator.Status.NoPower>Status: brak zasilania.</MatterManipulator.Status.NoPower>
+  <MatterManipulator.Status.NeedsHopper>Status: wymaga sąsiedniego leja materii.</MatterManipulator.Status.NeedsHopper>
+  <MatterManipulator.Status.WaitingResources>Status: oczekuje na zasoby ({0} kg).</MatterManipulator.Status.WaitingResources>
+  <MatterManipulator.Status.Working>Status: pracuje ({0}%).</MatterManipulator.Status.Working>
+
+  <MatterManipulator.Progress.NoPower>brak zasilania</MatterManipulator.Progress.NoPower>
+  <MatterManipulator.Progress.Feedstock>surowiec {0}%</MatterManipulator.Progress.Feedstock>
+
+  <MatterManipulator.Command.SelectProduct>Wybierz produkt</MatterManipulator.Command.SelectProduct>
+  <MatterManipulator.Command.SelectProductDesc>Wybierz przedmiot, który utworzy manipulator materii. Po wyborze maszyna zużyje zasoby według masy i rozpocznie cykl, gdy będzie zasilana.</MatterManipulator.Command.SelectProductDesc>
+  <MatterManipulator.Command.BuildHopper>Zbuduj lej</MatterManipulator.Command.BuildHopper>
+  <MatterManipulator.Command.BuildHopperDesc>Włącza tryb stawiania leja materii obok manipulatora.</MatterManipulator.Command.BuildHopperDesc>
+  <MatterManipulator.Command.Mode>Tryb: {0}</MatterManipulator.Command.Mode>
+  <MatterManipulator.Command.ModeDesc>Przełącza tryb produkcji: utwórz jedną partię i zatrzymaj się albo powtarzaj produkcję, dopóki są zasoby.</MatterManipulator.Command.ModeDesc>
+  <MatterManipulator.Command.BatchSize>Partia: {0}</MatterManipulator.Command.BatchSize>
+  <MatterManipulator.Command.BatchSizeDesc>Przełącza rozmiar stosu tworzony w każdym cyklu. Dostępne tylko dla przedmiotów, które można układać w stosy.</MatterManipulator.Command.BatchSizeDesc>
+  <MatterManipulator.Command.Material>Materiał: {0}</MatterManipulator.Command.Material>
+  <MatterManipulator.Command.MaterialDesc>Wybierz materiał gotowego przedmiotu. Mnożnik materiału jest stosowany do czasu cyklu.</MatterManipulator.Command.MaterialDesc>
+  <MatterManipulator.Command.Quality>Jakość: {0}</MatterManipulator.Command.Quality>
+  <MatterManipulator.Command.QualityDesc>Wybierz jakość gotowego przedmiotu. W trybie losowej jakości każdy cykl ponownie losuje jakość i stosuje odpowiedni mnożnik czasu.</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.ClearTarget>Wyczyść cel</MatterManipulator.Command.ClearTarget>
+  <MatterManipulator.Command.ClearTargetDesc>Anuluje aktualnie wybrany przedmiot. Zgromadzony bufor masy pozostanie w maszynie.</MatterManipulator.Command.ClearTargetDesc>
+
+  <MatterManipulator.Message.ProductSelected>Manipulator materii: wybrano produkt {0}.</MatterManipulator.Message.ProductSelected>
+  <MatterManipulator.Message.MaterialSelected>Manipulator materii: materiał {0}.</MatterManipulator.Message.MaterialSelected>
+  <MatterManipulator.Message.ModeSelected>Manipulator materii: tryb {0}.</MatterManipulator.Message.ModeSelected>
+  <MatterManipulator.Message.BatchSelected>Manipulator materii: rozmiar partii {0}.</MatterManipulator.Message.BatchSelected>
+  <MatterManipulator.Message.QualitySelected>Manipulator materii: jakość {0}.</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.MakeFailed>Manipulator materii nie mógł utworzyć wybranego przedmiotu.</MatterManipulator.Message.MakeFailed>
+  <MatterManipulator.Message.NoOutputSpace>Manipulator materii nie znalazł miejsca na gotowy przedmiot.</MatterManipulator.Message.NoOutputSpace>
+  <MatterManipulator.Message.Created>Manipulator materii utworzył {0}.</MatterManipulator.Message.Created>
+
+  <MatterManipulator.Mode.Repeat>powtarzaj</MatterManipulator.Mode.Repeat>
+  <MatterManipulator.Mode.MakeOne>utwórz raz</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.Time.Hours>{0} godz.</MatterManipulator.Time.Hours>
+  <MatterManipulator.Time.HourRange>{0}-{1} godz.</MatterManipulator.Time.HourRange>
+  <MatterManipulator.Time.HoursMultiplier>{0} godz. (x{1})</MatterManipulator.Time.HoursMultiplier>
+
+  <MatterManipulator.Dialog.Quality.Title>Wybierz jakość</MatterManipulator.Dialog.Quality.Title>
+  <MatterManipulator.Dialog.Quality.Description>Mnożnik jest stosowany do czasu cyklu. Losowa jakość jest losowana osobno dla każdego nowego cyklu.</MatterManipulator.Dialog.Quality.Description>
+  <MatterManipulator.Dialog.Stuff.Title>Wybierz materiał</MatterManipulator.Dialog.Stuff.Title>
+  <MatterManipulator.Dialog.Stuff.Found>Znaleziono: {0}. Mnożnik jest stosowany do czasu cyklu.</MatterManipulator.Dialog.Stuff.Found>
+  <MatterManipulator.Dialog.Stuff.Info>x{0} / {1} godz.</MatterManipulator.Dialog.Stuff.Info>
+  <MatterManipulator.Dialog.Product.Title>Wybierz produkt</MatterManipulator.Dialog.Product.Title>
+  <MatterManipulator.Dialog.Product.Found>Znaleziono: {0}. Wyszukiwanie używa etykiety i defName.</MatterManipulator.Dialog.Product.Found>
+  <MatterManipulator.Dialog.Product.Info>{0} kg / {1} godz.</MatterManipulator.Dialog.Product.Info>
+
+  <MatterManipulator.Button.Selected>Wybrano</MatterManipulator.Button.Selected>
+  <MatterManipulator.Button.Select>Wybierz</MatterManipulator.Button.Select>
+  <MatterManipulator.Button.Material>Materiał</MatterManipulator.Button.Material>
+</LanguageData>

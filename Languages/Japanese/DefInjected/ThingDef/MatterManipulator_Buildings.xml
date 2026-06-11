@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>物質マニピュレーター</MatterManipulator.label>
+  <MatterManipulator.description>物質を再構築する自律機械です。アイテムを選択し、出力質量の2倍に相当する任意の資源を投入すると、建物は操作者なしで作業します。各サイクルは完成品1kgあたり8時間かかります。</MatterManipulator.description>
+  <MatterHopper.label>物質ホッパー</MatterHopper.label>
+  <MatterHopper.description>物質マニピュレーターに原料を供給するホッパーです。栄養ペーストホッパーとは異なり、ほぼすべての保管可能なアイテムや資源を受け入れます。</MatterHopper.description>
+</LanguageData>

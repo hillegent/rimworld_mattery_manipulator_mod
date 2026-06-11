@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MatterManipulator.label>manipolatore di materia</MatterManipulator.label>
+  <MatterManipulator.description>Una macchina autonoma per ricostruire la materia. Seleziona un oggetto, carica risorse qualsiasi con massa totale pari al doppio della massa prodotta, e l'edificio lavorerà senza operatore. Ogni ciclo richiede 8 ore per kg di prodotto finito.</MatterManipulator.description>
+  <MatterHopper.label>tramoggia di materia</MatterHopper.label>
+  <MatterHopper.description>Una tramoggia per alimentare il manipolatore di materia con materie prime. A differenza di una tramoggia per pasta nutritiva, accetta quasi ogni oggetto o risorsa immagazzinabile.</MatterHopper.description>
+</LanguageData>
