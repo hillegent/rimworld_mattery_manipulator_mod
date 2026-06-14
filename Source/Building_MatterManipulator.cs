@@ -328,8 +328,13 @@ namespace MatterManipulator
         public override void ExposeData()
         {
             base.ExposeData();
+            var targetDefName = targetDef?.defName;
+            var targetStuffDefName = targetStuff?.defName;
+
             Scribe_Defs.Look(ref targetDef, "targetDef");
             Scribe_Defs.Look(ref targetStuff, "targetStuff");
+            Scribe_Values.Look(ref targetDefName, "targetDefName");
+            Scribe_Values.Look(ref targetStuffDefName, "targetStuffDefName");
             Scribe_Values.Look(ref progressTicks, "progressTicks", 0);
             Scribe_Values.Look(ref feedstockMass, "feedstockMass", 0f);
             Scribe_Values.Look(ref selectedQuality, "selectedQuality", RandomQualityMode);
@@ -338,12 +343,63 @@ namespace MatterManipulator
             Scribe_Values.Look(ref repeatProduction, "repeatProduction", true);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
-                if (targetDef != null && targetDef.MadeFromStuff)
-                {
-                    targetStuff = ValidStuffFor(targetDef, targetStuff);
-                }
-                batchCount = ClampBatchCount(targetDef, batchCount);
+                NormalizeLoadedState(targetDefName, targetStuffDefName);
             }
+        }
+
+        private void NormalizeLoadedState(string targetDefName, string targetStuffDefName)
+        {
+            if (targetDef == null && !targetDefName.NullOrEmpty())
+            {
+                targetDef = DefDatabase<ThingDef>.GetNamedSilentFail(targetDefName);
+            }
+
+            if (targetDef == null || !CanProduce(targetDef))
+            {
+                ClearTarget();
+                feedstockMass = Mathf.Max(0f, feedstockMass);
+                return;
+            }
+
+            if (targetDef.MadeFromStuff)
+            {
+                if (targetStuff == null && !targetStuffDefName.NullOrEmpty())
+                {
+                    targetStuff = DefDatabase<ThingDef>.GetNamedSilentFail(targetStuffDefName);
+                }
+
+                targetStuff = ValidStuffFor(targetDef, targetStuff);
+                if (targetStuff == null)
+                {
+                    ClearTarget();
+                    feedstockMass = Mathf.Max(0f, feedstockMass);
+                    return;
+                }
+            }
+            else
+            {
+                targetStuff = null;
+            }
+
+            if (!IsValidQualityMode(selectedQuality))
+            {
+                selectedQuality = RandomQualityMode;
+            }
+
+            if (!IsValidQualityMode(cycleQuality))
+            {
+                cycleQuality = RandomQualityMode;
+            }
+
+            if (!TargetSupportsQuality)
+            {
+                selectedQuality = RandomQualityMode;
+                cycleQuality = RandomQualityMode;
+            }
+
+            batchCount = ClampBatchCount(targetDef, batchCount);
+            feedstockMass = Mathf.Max(0f, feedstockMass);
+            progressTicks = Mathf.Max(0, progressTicks);
         }
 
         public override void TickRare()
@@ -910,6 +966,11 @@ namespace MatterManipulator
         public static string QualityMultiplierLabelForMode(int qualityMode)
         {
             return qualityMode == RandomQualityMode ? MatterManipulatorText.T("MatterManipulator.Quality.RandomEveryCycle") : $"x{QualityMultiplier((QualityCategory)qualityMode):0.##}";
+        }
+
+        private static bool IsValidQualityMode(int qualityMode)
+        {
+            return qualityMode == RandomQualityMode || QualityChoices.Contains((QualityCategory)qualityMode);
         }
 
         public static float BaseHoursForMass(float mass)
