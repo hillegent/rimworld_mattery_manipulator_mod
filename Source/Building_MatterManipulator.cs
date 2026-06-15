@@ -261,8 +261,8 @@ namespace MatterManipulator
             QualityCategory.Masterwork,
             QualityCategory.Legendary
         };
-        private static readonly Material ProgressBarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.24f, 0.82f, 1f));
-        private static readonly Material ProgressBarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.08f, 0.09f, 0.1f));
+        private static Material progressBarFilledMat;
+        private static Material progressBarUnfilledMat;
         private static readonly IntVec3[] CardinalDirections =
         {
             new IntVec3(0, 0, 1),
@@ -272,6 +272,9 @@ namespace MatterManipulator
         };
 
         private static List<ThingDef> cachedProductDefs;
+
+        private static Material ProgressBarFilledMat => progressBarFilledMat ?? (progressBarFilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.22f, 0.72f, 0.24f)));
+        private static Material ProgressBarUnfilledMat => progressBarUnfilledMat ?? (progressBarUnfilledMat = SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.08f, 0.08f, 0.08f)));
 
         private ThingDef targetDef;
         private ThingDef targetStuff;
