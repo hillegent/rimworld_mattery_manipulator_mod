@@ -9,6 +9,7 @@
   <MatterManipulator.Settings.HoursPerKg>1kgあたりの作業時間</MatterManipulator.Settings.HoursPerKg>
   <MatterManipulator.Settings.ResearchCost>研究コスト</MatterManipulator.Settings.ResearchCost>
   <MatterManipulator.Settings.ShowResultNotifications>完成通知を表示</MatterManipulator.Settings.ShowResultNotifications>
+  <MatterManipulator.Settings.ShowProgressBar>進捗バーを表示</MatterManipulator.Settings.ShowProgressBar>
   <MatterManipulator.Settings.QualityMultipliers>品質時間倍率</MatterManipulator.Settings.QualityMultipliers>
   <MatterManipulator.Settings.ResetDefaults>初期値に戻す</MatterManipulator.Settings.ResetDefaults>
 

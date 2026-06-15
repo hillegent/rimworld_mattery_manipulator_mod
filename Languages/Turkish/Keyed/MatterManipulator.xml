@@ -9,6 +9,7 @@
   <MatterManipulator.Settings.HoursPerKg>Kg başına çalışma saati</MatterManipulator.Settings.HoursPerKg>
   <MatterManipulator.Settings.ResearchCost>Araştırma maliyeti</MatterManipulator.Settings.ResearchCost>
   <MatterManipulator.Settings.ShowResultNotifications>Sonuç bildirimlerini göster</MatterManipulator.Settings.ShowResultNotifications>
+  <MatterManipulator.Settings.ShowProgressBar>İlerleme çubuğunu göster</MatterManipulator.Settings.ShowProgressBar>
   <MatterManipulator.Settings.QualityMultipliers>Kalite zaman çarpanları</MatterManipulator.Settings.QualityMultipliers>
   <MatterManipulator.Settings.ResetDefaults>Varsayılanlara sıfırla</MatterManipulator.Settings.ResetDefaults>
 

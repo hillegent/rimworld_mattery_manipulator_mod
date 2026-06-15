@@ -9,6 +9,7 @@
   <MatterManipulator.Settings.HoursPerKg>每千克工作小时</MatterManipulator.Settings.HoursPerKg>
   <MatterManipulator.Settings.ResearchCost>研究消耗</MatterManipulator.Settings.ResearchCost>
   <MatterManipulator.Settings.ShowResultNotifications>显示结果通知</MatterManipulator.Settings.ShowResultNotifications>
+  <MatterManipulator.Settings.ShowProgressBar>显示进度条</MatterManipulator.Settings.ShowProgressBar>
   <MatterManipulator.Settings.QualityMultipliers>品质时间倍率</MatterManipulator.Settings.QualityMultipliers>
   <MatterManipulator.Settings.ResetDefaults>重置为默认值</MatterManipulator.Settings.ResetDefaults>
 

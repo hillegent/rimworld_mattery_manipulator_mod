@@ -9,6 +9,7 @@
   <MatterManipulator.Settings.HoursPerKg>Godziny pracy na kg</MatterManipulator.Settings.HoursPerKg>
   <MatterManipulator.Settings.ResearchCost>Koszt badań</MatterManipulator.Settings.ResearchCost>
   <MatterManipulator.Settings.ShowResultNotifications>Pokazuj powiadomienia o wyniku</MatterManipulator.Settings.ShowResultNotifications>
+  <MatterManipulator.Settings.ShowProgressBar>Pokazuj pasek postępu</MatterManipulator.Settings.ShowProgressBar>
   <MatterManipulator.Settings.QualityMultipliers>Mnożniki czasu jakości</MatterManipulator.Settings.QualityMultipliers>
   <MatterManipulator.Settings.ResetDefaults>Przywróć domyślne</MatterManipulator.Settings.ResetDefaults>
 

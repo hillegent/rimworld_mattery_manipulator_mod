@@ -89,12 +89,14 @@ namespace MatterManipulator
         public const float DefaultMasterworkMultiplier = 1.2f;
         public const float DefaultLegendaryMultiplier = 1.5f;
         public const bool DefaultShowResultNotifications = true;
+        public const bool DefaultShowProgressBar = true;
 
         public float inputMassFactor = DefaultInputMassFactor;
         public float hoursPerKg = DefaultHoursPerKg;
         public float powerConsumptionWatts = DefaultPowerConsumptionWatts;
         public float researchCost = DefaultResearchCost;
         public bool showResultNotifications = DefaultShowResultNotifications;
+        public bool showProgressBar = DefaultShowProgressBar;
         public float awfulMultiplier = DefaultAwfulMultiplier;
         public float poorMultiplier = DefaultPoorMultiplier;
         public float normalMultiplier = DefaultNormalMultiplier;
@@ -123,6 +125,7 @@ namespace MatterManipulator
             Scribe_Values.Look(ref powerConsumptionWatts, "powerConsumptionWatts", DefaultPowerConsumptionWatts);
             Scribe_Values.Look(ref researchCost, "researchCost", DefaultResearchCost);
             Scribe_Values.Look(ref showResultNotifications, "showResultNotifications", DefaultShowResultNotifications);
+            Scribe_Values.Look(ref showProgressBar, "showProgressBar", DefaultShowProgressBar);
             Scribe_Values.Look(ref awfulMultiplier, "awfulMultiplier", DefaultAwfulMultiplier);
             Scribe_Values.Look(ref poorMultiplier, "poorMultiplier", DefaultPoorMultiplier);
             Scribe_Values.Look(ref normalMultiplier, "normalMultiplier", DefaultNormalMultiplier);
@@ -147,6 +150,7 @@ namespace MatterManipulator
 
             NumericField(listing, MatterManipulatorText.T("MatterManipulator.Settings.ResearchCost"), ref researchCost, ref researchCostBuffer, 1f, 1000000f);
             listing.CheckboxLabeled(MatterManipulatorText.T("MatterManipulator.Settings.ShowResultNotifications"), ref showResultNotifications);
+            listing.CheckboxLabeled(MatterManipulatorText.T("MatterManipulator.Settings.ShowProgressBar"), ref showProgressBar);
 
             listing.GapLine();
             listing.Label(MatterManipulatorText.T("MatterManipulator.Settings.QualityMultipliers"));
@@ -192,6 +196,7 @@ namespace MatterManipulator
             powerConsumptionWatts = DefaultPowerConsumptionWatts;
             researchCost = DefaultResearchCost;
             showResultNotifications = DefaultShowResultNotifications;
+            showProgressBar = DefaultShowProgressBar;
             awfulMultiplier = DefaultAwfulMultiplier;
             poorMultiplier = DefaultPoorMultiplier;
             normalMultiplier = DefaultNormalMultiplier;
@@ -515,7 +520,8 @@ namespace MatterManipulator
 
         private bool ShouldDrawProgressBar()
         {
-            return Spawned &&
+            return (Settings?.showProgressBar ?? MatterManipulatorSettings.DefaultShowProgressBar) &&
+                Spawned &&
                 targetDef != null &&
                 Powered &&
                 feedstockMass + 0.0001f >= RequiredFeedstockMass &&

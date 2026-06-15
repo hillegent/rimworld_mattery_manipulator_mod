@@ -9,6 +9,7 @@
   <MatterManipulator.Settings.HoursPerKg>kg당 작업 시간</MatterManipulator.Settings.HoursPerKg>
   <MatterManipulator.Settings.ResearchCost>연구 비용</MatterManipulator.Settings.ResearchCost>
   <MatterManipulator.Settings.ShowResultNotifications>결과 알림 표시</MatterManipulator.Settings.ShowResultNotifications>
+  <MatterManipulator.Settings.ShowProgressBar>진행 막대 표시</MatterManipulator.Settings.ShowProgressBar>
   <MatterManipulator.Settings.QualityMultipliers>품질 시간 배율</MatterManipulator.Settings.QualityMultipliers>
   <MatterManipulator.Settings.ResetDefaults>기본값으로 초기화</MatterManipulator.Settings.ResetDefaults>
 

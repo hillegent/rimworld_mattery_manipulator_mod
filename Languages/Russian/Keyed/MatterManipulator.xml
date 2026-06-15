@@ -9,6 +9,7 @@
   <MatterManipulator.Settings.HoursPerKg>Часов работы за 1 кг</MatterManipulator.Settings.HoursPerKg>
   <MatterManipulator.Settings.ResearchCost>Стоимость исследования</MatterManipulator.Settings.ResearchCost>
   <MatterManipulator.Settings.ShowResultNotifications>Показывать уведомления о результате</MatterManipulator.Settings.ShowResultNotifications>
+  <MatterManipulator.Settings.ShowProgressBar>Показывать прогресс-бар</MatterManipulator.Settings.ShowProgressBar>
   <MatterManipulator.Settings.QualityMultipliers>Множители времени для качества</MatterManipulator.Settings.QualityMultipliers>
   <MatterManipulator.Settings.ResetDefaults>Сбросить к значениям по умолчанию</MatterManipulator.Settings.ResetDefaults>
 
