@@ -550,7 +550,7 @@ namespace MatterManipulator
 
         private static Vector3 ProgressBarCenter(Vector3 drawLoc)
         {
-            var center = drawLoc + new Vector3(0f, 0f, 1.85f);
+            var center = drawLoc + new Vector3(0f, 0f, -1.1f);
             center.y = AltitudeLayer.MetaOverlays.AltitudeFor();
             return center;
         }
