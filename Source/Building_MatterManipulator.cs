@@ -251,6 +251,7 @@ namespace MatterManipulator
         }
     }
 
+    [StaticConstructorOnStartup]
     public class Building_MatterManipulator : Building
     {
         private const int RandomQualityMode = -1;
