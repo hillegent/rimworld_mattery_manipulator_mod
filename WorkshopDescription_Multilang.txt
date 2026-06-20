@@ -1,0 +1,622 @@
+Russian / Русский
+
+Добавляет автономное здание поздней игры, которое перестраивает исходную материю в выбранные предметы.
+
+Манипулятор материи - это высокотехнологичное здание 3x3. Загрузите ресурсы в соседнюю воронку, выберите изделие, материал, качество, размер пачки и режим производства, после чего установка будет работать самостоятельно без оператора.
+
+Основные возможности:
+Автономное производство без колониста-оператора.
+Подача ресурсов через соседнюю воронку, как у дозатора питательной пасты.
+Выбор создаваемого предмета.
+Выбор материала для предметов, которые это поддерживают.
+Выбор качества для предметов, которые поддерживают качество.
+Выбор размера пачки для стакуемых предметов: 1, 5, 10 или 100.
+Режим производства: сделать одну пачку или повторять бесконечно.
+Видимый прогресс-бар во время работы.
+Отдельная технология поздней игры.
+Многоязычная локализация.
+
+Баланс по умолчанию:
+Потребление энергии: 10000 W.
+Требуется входных ресурсов: в 2 раза больше массы готового изделия.
+Время работы: 8 игровых часов за 1 кг готового изделия.
+Стоимость исследования: 10000.
+Выбранное качество влияет на время производства.
+Выбранный материал также влияет на время производства.
+
+Настройки:
+Все основные параметры можно изменить в настройках мода.
+
+Настраиваются:
+Потребление энергии.
+Множитель входной массы.
+Время работы за 1 кг.
+Стоимость исследования.
+Множители времени для каждого уровня качества.
+Уведомления о созданных предметах.
+
+Мод можно настроить как под строгий баланс поздней игры, так и под более свободную песочницу.
+
+Как использовать:
+Исследуйте Matter Manipulation / Манипуляцию материи.
+Постройте манипулятор материи.
+Постройте рядом воронку через кнопку здания или через меню строительства.
+Положите ресурсы в воронку.
+Выберите предмет, материал, качество, размер пачки и режим производства.
+Подайте достаточно энергии, и установка начнет работать автоматически.
+
+
+English
+
+Adds an autonomous late-game building that reconstructs raw matter into selected items.
+
+The matter manipulator is a high-tech 3x3 building. Load resources into an adjacent hopper, choose the product, material, quality, batch size, and production mode, and the machine will work automatically without an operator.
+
+Main features:
+Autonomous production without a pawn operator.
+Resource input through an adjacent hopper, similar to the nutrient paste dispenser.
+Product selection.
+Material selection for items that support it.
+Quality selection for items that support quality.
+Batch size selection for stackable items: 1, 5, 10, or 100.
+Production mode: make one batch or repeat forever.
+Visible progress bar while working.
+Dedicated late-game research project.
+Multilingual localization.
+
+Default balance:
+Power consumption: 10000 W.
+Input resources required: 2x the mass of the finished product.
+Work time: 8 in-game hours per 1 kg of finished product.
+Research cost: 10000.
+Selected quality affects production time.
+Selected material also affects production time.
+
+Settings:
+All main parameters can be changed in the mod settings.
+
+Configurable values:
+Power consumption.
+Input mass multiplier.
+Work time per 1 kg.
+Research cost.
+Time multipliers for each quality level.
+Notifications for created items.
+
+The mod can be tuned for strict late-game balance or for a more relaxed sandbox.
+
+How to use:
+Research Matter Manipulation.
+Build the matter manipulator.
+Build a hopper next to it using the building button or the architect menu.
+Put resources into the hopper.
+Choose product, material, quality, batch size, and production mode.
+Provide enough power, and the machine will start working automatically.
+
+
+German / Deutsch
+
+Fügt ein autonomes Gebäude für das späte Spiel hinzu, das rohe Materie in ausgewählte Gegenstände rekonstruiert.
+
+Der Materiemanipulator ist ein hochtechnologisches 3x3-Gebäude. Lade Ressourcen in einen angrenzenden Trichter, wähle Produkt, Material, Qualität, Stapelgröße und Produktionsmodus, und die Maschine arbeitet automatisch ohne Bediener.
+
+Hauptfunktionen:
+Autonome Produktion ohne Kolonisten als Bediener.
+Ressourcenzufuhr über einen angrenzenden Trichter, ähnlich wie beim Nährpasten-Spender.
+Auswahl des herzustellenden Gegenstands.
+Materialauswahl für Gegenstände, die dies unterstützen.
+Qualitätsauswahl für Gegenstände, die Qualität unterstützen.
+Stapelgrößen für stapelbare Gegenstände: 1, 5, 10 oder 100.
+Produktionsmodus: einen Stapel herstellen oder endlos wiederholen.
+Sichtbarer Fortschrittsbalken während der Arbeit.
+Eigenes Forschungsprojekt für das späte Spiel.
+Mehrsprachige Lokalisierung.
+
+Standardbalance:
+Stromverbrauch: 10000 W.
+Benötigte Eingangsressourcen: das 2-fache der Masse des fertigen Produkts.
+Arbeitszeit: 8 Spielstunden pro 1 kg fertigem Produkt.
+Forschungskosten: 10000.
+Die ausgewählte Qualität beeinflusst die Produktionszeit.
+Das ausgewählte Material beeinflusst ebenfalls die Produktionszeit.
+
+Einstellungen:
+Alle wichtigen Parameter können in den Mod-Einstellungen geändert werden.
+
+Konfigurierbar sind:
+Stromverbrauch.
+Multiplikator für Eingangsmasse.
+Arbeitszeit pro 1 kg.
+Forschungskosten.
+Zeitmultiplikatoren für jede Qualitätsstufe.
+Benachrichtigungen über erstellte Gegenstände.
+
+Der Mod kann auf strenges Late-Game-Balancing oder eine freiere Sandbox abgestimmt werden.
+
+Verwendung:
+Erforsche Matter Manipulation / Materiemanipulation.
+Baue den Materiemanipulator.
+Baue daneben einen Trichter über die Gebäudeschaltfläche oder das Architektenmenü.
+Lege Ressourcen in den Trichter.
+Wähle Gegenstand, Material, Qualität, Stapelgröße und Produktionsmodus.
+Versorge die Anlage mit ausreichend Energie, und sie beginnt automatisch zu arbeiten.
+
+
+French / Français
+
+Ajoute un bâtiment autonome de fin de partie qui reconstruit la matière brute en objets sélectionnés.
+
+Le manipulateur de matière est un bâtiment high-tech 3x3. Chargez des ressources dans une trémie adjacente, choisissez le produit, le matériau, la qualité, la taille du lot et le mode de production, puis la machine travaillera automatiquement sans opérateur.
+
+Fonctionnalités principales :
+Production autonome sans colon opérateur.
+Entrée des ressources par une trémie adjacente, comme le distributeur de pâte nutritive.
+Choix de l'objet à créer.
+Choix du matériau pour les objets compatibles.
+Choix de la qualité pour les objets compatibles.
+Choix de la taille du lot pour les objets empilables : 1, 5, 10 ou 100.
+Mode de production : fabriquer un lot ou répéter indéfiniment.
+Barre de progression visible pendant le travail.
+Technologie de fin de partie dédiée.
+Localisation multilingue.
+
+Équilibrage par défaut :
+Consommation électrique : 10000 W.
+Ressources nécessaires : 2 fois la masse du produit fini.
+Temps de travail : 8 heures de jeu par kg de produit fini.
+Coût de recherche : 10000.
+La qualité sélectionnée influence le temps de production.
+Le matériau sélectionné influence aussi le temps de production.
+
+Paramètres :
+Tous les principaux paramètres peuvent être modifiés dans les paramètres du mod.
+
+Paramètres configurables :
+Consommation électrique.
+Multiplicateur de masse d'entrée.
+Temps de travail par kg.
+Coût de recherche.
+Multiplicateurs de temps pour chaque niveau de qualité.
+Notifications des objets créés.
+
+Le mod peut être réglé pour un équilibre strict de fin de partie ou pour une partie sandbox plus libre.
+
+Comment l'utiliser :
+Recherchez Matter Manipulation / Manipulation de matière.
+Construisez le manipulateur de matière.
+Construisez une trémie à côté via le bouton du bâtiment ou le menu architecte.
+Placez des ressources dans la trémie.
+Choisissez l'objet, le matériau, la qualité, la taille du lot et le mode de production.
+Fournissez suffisamment d'énergie, et l'installation commencera à travailler automatiquement.
+
+
+Spanish / Español
+
+Añade un edificio autónomo de final de partida que reconstruye materia bruta en objetos seleccionados.
+
+El manipulador de materia es un edificio tecnológico de 3x3. Carga recursos en una tolva adyacente, elige el producto, material, calidad, tamaño de lote y modo de producción, y la instalación trabajará automáticamente sin operador.
+
+Características principales:
+Producción autónoma sin colono operador.
+Entrada de recursos mediante una tolva adyacente, como el dispensador de pasta nutritiva.
+Selección del objeto a crear.
+Selección de material para objetos compatibles.
+Selección de calidad para objetos compatibles.
+Selección de tamaño de lote para objetos apilables: 1, 5, 10 o 100.
+Modo de producción: crear un lote o repetir infinitamente.
+Barra de progreso visible durante el trabajo.
+Tecnología propia de final de partida.
+Localización multilingüe.
+
+Balance predeterminado:
+Consumo de energía: 10000 W.
+Recursos de entrada necesarios: 2 veces la masa del producto terminado.
+Tiempo de trabajo: 8 horas de juego por 1 kg de producto terminado.
+Coste de investigación: 10000.
+La calidad seleccionada influye en el tiempo de producción.
+El material seleccionado también influye en el tiempo de producción.
+
+Ajustes:
+Todos los parámetros principales se pueden cambiar en los ajustes del mod.
+
+Valores configurables:
+Consumo de energía.
+Multiplicador de masa de entrada.
+Tiempo de trabajo por 1 kg.
+Coste de investigación.
+Multiplicadores de tiempo para cada nivel de calidad.
+Notificaciones de objetos creados.
+
+El mod puede ajustarse para un balance estricto de final de partida o para una experiencia sandbox más libre.
+
+Cómo usarlo:
+Investiga Matter Manipulation / Manipulación de materia.
+Construye el manipulador de materia.
+Construye una tolva junto a él usando el botón del edificio o el menú de arquitectura.
+Coloca recursos en la tolva.
+Elige objeto, material, calidad, tamaño de lote y modo de producción.
+Proporciona suficiente energía, y la instalación empezará a trabajar automáticamente.
+
+
+Italian / Italiano
+
+Aggiunge un edificio autonomo da fine partita che ricostruisce la materia grezza in oggetti selezionati.
+
+Il manipolatore di materia è un edificio high-tech 3x3. Carica risorse in una tramoggia adiacente, scegli prodotto, materiale, qualità, dimensione del lotto e modalità di produzione, e l'impianto lavorerà automaticamente senza operatore.
+
+Funzioni principali:
+Produzione autonoma senza colono operatore.
+Ingresso delle risorse tramite una tramoggia adiacente, come il dispensatore di pasta nutritiva.
+Scelta dell'oggetto da creare.
+Scelta del materiale per gli oggetti compatibili.
+Scelta della qualità per gli oggetti compatibili.
+Scelta della dimensione del lotto per oggetti impilabili: 1, 5, 10 o 100.
+Modalità di produzione: creare un lotto o ripetere all'infinito.
+Barra di progresso visibile durante il lavoro.
+Tecnologia dedicata da fine partita.
+Localizzazione multilingue.
+
+Bilanciamento predefinito:
+Consumo energetico: 10000 W.
+Risorse richieste in ingresso: 2 volte la massa del prodotto finito.
+Tempo di lavoro: 8 ore di gioco per 1 kg di prodotto finito.
+Costo ricerca: 10000.
+La qualità selezionata influenza il tempo di produzione.
+Anche il materiale selezionato influenza il tempo di produzione.
+
+Impostazioni:
+Tutti i parametri principali possono essere modificati nelle impostazioni del mod.
+
+Valori configurabili:
+Consumo energetico.
+Moltiplicatore della massa in ingresso.
+Tempo di lavoro per 1 kg.
+Costo ricerca.
+Moltiplicatori di tempo per ogni livello di qualità.
+Notifiche degli oggetti creati.
+
+Il mod può essere regolato per un bilanciamento severo da fine partita o per una sandbox più libera.
+
+Come usarlo:
+Ricerca Matter Manipulation / Manipolazione della materia.
+Costruisci il manipolatore di materia.
+Costruisci una tramoggia accanto usando il pulsante dell'edificio o il menu architetto.
+Metti risorse nella tramoggia.
+Scegli oggetto, materiale, qualità, dimensione del lotto e modalità di produzione.
+Fornisci energia sufficiente, e l'impianto inizierà a lavorare automaticamente.
+
+
+Polish / Polski
+
+Dodaje autonomiczny budynek późnej fazy gry, który przekształca surową materię w wybrane przedmioty.
+
+Manipulator materii to zaawansowany technologicznie budynek 3x3. Załaduj zasoby do sąsiedniego leja, wybierz produkt, materiał, jakość, rozmiar partii i tryb produkcji, a instalacja będzie działać samodzielnie bez operatora.
+
+Główne funkcje:
+Autonomiczna produkcja bez kolonisty-operatora.
+Podawanie zasobów przez sąsiedni lej, podobnie jak w dozowniku pasty odżywczej.
+Wybór tworzonego przedmiotu.
+Wybór materiału dla przedmiotów, które to obsługują.
+Wybór jakości dla przedmiotów, które obsługują jakość.
+Wybór rozmiaru partii dla przedmiotów układanych w stosy: 1, 5, 10 lub 100.
+Tryb produkcji: wykonaj jedną partię albo powtarzaj bez końca.
+Widoczny pasek postępu podczas pracy.
+Osobna technologia późnej fazy gry.
+Wielojęzyczna lokalizacja.
+
+Domyślny balans:
+Zużycie energii: 10000 W.
+Wymagane zasoby wejściowe: 2 razy większa masa niż masa gotowego produktu.
+Czas pracy: 8 godzin gry za 1 kg gotowego produktu.
+Koszt badań: 10000.
+Wybrana jakość wpływa na czas produkcji.
+Wybrany materiał również wpływa na czas produkcji.
+
+Ustawienia:
+Wszystkie główne parametry można zmienić w ustawieniach moda.
+
+Można konfigurować:
+Zużycie energii.
+Mnożnik masy wejściowej.
+Czas pracy za 1 kg.
+Koszt badań.
+Mnożniki czasu dla każdego poziomu jakości.
+Powiadomienia o utworzonych przedmiotach.
+
+Mod można dostosować zarówno do surowego balansu późnej gry, jak i do swobodniejszej rozgrywki sandbox.
+
+Jak używać:
+Zbadaj Matter Manipulation / Manipulację materią.
+Zbuduj manipulator materii.
+Zbuduj obok lej za pomocą przycisku budynku albo menu architekta.
+Umieść zasoby w leju.
+Wybierz przedmiot, materiał, jakość, rozmiar partii i tryb produkcji.
+Zapewnij wystarczającą ilość energii, a instalacja zacznie działać automatycznie.
+
+
+Portuguese Brazilian / Português do Brasil
+
+Adiciona um edifício autônomo de fim de jogo que reconstrói matéria bruta em itens selecionados.
+
+O manipulador de matéria é um edifício tecnológico 3x3. Carregue recursos em um funil adjacente, escolha o produto, material, qualidade, tamanho do lote e modo de produção, e a instalação trabalhará automaticamente sem operador.
+
+Principais recursos:
+Produção autônoma sem colono operador.
+Entrada de recursos por um funil adjacente, como no dispensador de pasta nutritiva.
+Escolha do item a ser criado.
+Escolha de material para itens compatíveis.
+Escolha de qualidade para itens compatíveis.
+Escolha do tamanho do lote para itens empilháveis: 1, 5, 10 ou 100.
+Modo de produção: criar um lote ou repetir infinitamente.
+Barra de progresso visível durante o trabalho.
+Tecnologia própria de fim de jogo.
+Localização multilíngue.
+
+Balanceamento padrão:
+Consumo de energia: 10000 W.
+Recursos de entrada necessários: 2 vezes a massa do produto final.
+Tempo de trabalho: 8 horas de jogo por 1 kg de produto final.
+Custo da pesquisa: 10000.
+A qualidade escolhida afeta o tempo de produção.
+O material escolhido também afeta o tempo de produção.
+
+Configurações:
+Todos os parâmetros principais podem ser alterados nas configurações do mod.
+
+Valores configuráveis:
+Consumo de energia.
+Multiplicador de massa de entrada.
+Tempo de trabalho por 1 kg.
+Custo da pesquisa.
+Multiplicadores de tempo para cada nível de qualidade.
+Notificações de itens criados.
+
+O mod pode ser ajustado tanto para um balanceamento rigoroso de fim de jogo quanto para uma experiência sandbox mais livre.
+
+Como usar:
+Pesquise Matter Manipulation / Manipulação de matéria.
+Construa o manipulador de matéria.
+Construa um funil ao lado usando o botão do edifício ou o menu de arquitetura.
+Coloque recursos no funil.
+Escolha item, material, qualidade, tamanho do lote e modo de produção.
+Forneça energia suficiente, e a instalação começará a trabalhar automaticamente.
+
+
+Turkish / Türkçe
+
+Ham maddeyi seçilen eşyalara yeniden yapılandıran, oyun sonu için otonom bir bina ekler.
+
+Madde manipülatörü 3x3 boyutunda yüksek teknolojili bir binadır. Kaynakları bitişik bir hazneye yükleyin, ürün, malzeme, kalite, parti boyutu ve üretim modunu seçin; tesis operatör olmadan otomatik olarak çalışır.
+
+Ana özellikler:
+Kolonist operatör gerektirmeyen otonom üretim.
+Besin macunu dağıtıcısına benzer şekilde bitişik hazneden kaynak girişi.
+Oluşturulacak eşyanın seçimi.
+Destekleyen eşyalar için malzeme seçimi.
+Kalite destekleyen eşyalar için kalite seçimi.
+Yığınlanabilen eşyalar için parti boyutu seçimi: 1, 5, 10 veya 100.
+Üretim modu: bir parti üret veya sonsuza kadar tekrarla.
+Çalışma sırasında görünür ilerleme çubuğu.
+Oyun sonu için ayrı araştırma teknolojisi.
+Çok dilli yerelleştirme.
+
+Varsayılan denge:
+Güç tüketimi: 10000 W.
+Gerekli giriş kaynakları: bitmiş ürün kütlesinin 2 katı.
+Çalışma süresi: bitmiş ürünün 1 kg'ı başına 8 oyun saati.
+Araştırma maliyeti: 10000.
+Seçilen kalite üretim süresini etkiler.
+Seçilen malzeme de üretim süresini etkiler.
+
+Ayarlar:
+Tüm ana parametreler mod ayarlarından değiştirilebilir.
+
+Ayarlanabilir değerler:
+Güç tüketimi.
+Giriş kütlesi çarpanı.
+1 kg başına çalışma süresi.
+Araştırma maliyeti.
+Her kalite seviyesi için zaman çarpanları.
+Oluşturulan eşyalar için bildirimler.
+
+Mod, sıkı bir oyun sonu dengesi için de daha serbest bir sandbox deneyimi için de ayarlanabilir.
+
+Nasıl kullanılır:
+Matter Manipulation / Madde Manipülasyonu araştırmasını tamamlayın.
+Madde manipülatörünü inşa edin.
+Bina düğmesini veya mimar menüsünü kullanarak yanına bir hazne inşa edin.
+Kaynakları hazneye koyun.
+Eşya, malzeme, kalite, parti boyutu ve üretim modunu seçin.
+Yeterli güç sağlayın; tesis otomatik olarak çalışmaya başlar.
+
+
+Japanese / 日本語
+
+原料となる物質を選択したアイテムへ再構築する、終盤向けの自律建築物を追加します。
+
+物質マニピュレーターは3x3のハイテク建築物です。隣接するホッパーに資源を投入し、製品、素材、品質、バッチサイズ、生産モードを選択すると、設備は操作者なしで自動的に作業します。
+
+主な機能:
+入植者の操作なしで自律生産。
+栄養ペーストディスペンサーのように、隣接ホッパーから資源を投入。
+作成するアイテムの選択。
+対応アイテムの素材選択。
+品質を持つアイテムの品質選択。
+スタック可能なアイテムのバッチサイズ選択: 1、5、10、100。
+生産モード: 1バッチだけ作成、または無限に繰り返し。
+作業中に表示される進捗バー。
+終盤向けの専用研究。
+多言語ローカライズ。
+
+初期バランス:
+消費電力: 10000 W。
+必要な入力資源: 完成品の質量の2倍。
+作業時間: 完成品1kgあたりゲーム内8時間。
+研究コスト: 10000。
+選択した品質は生産時間に影響します。
+選択した素材も生産時間に影響します。
+
+設定:
+主要なパラメータはすべてMOD設定で変更できます。
+
+設定可能な項目:
+消費電力。
+入力質量倍率。
+1kgあたりの作業時間。
+研究コスト。
+各品質レベルの時間倍率。
+作成されたアイテムの通知。
+
+このMODは、厳しめの終盤バランスにも、自由なサンドボックス向けにも調整できます。
+
+使い方:
+Matter Manipulation / 物質操作を研究します。
+物質マニピュレーターを建設します。
+建物ボタンまたは建築メニューから、隣にホッパーを建設します。
+ホッパーに資源を入れます。
+アイテム、素材、品質、バッチサイズ、生産モードを選択します。
+十分な電力を供給すると、設備は自動的に作業を開始します。
+
+
+Korean / 한국어
+
+원료 물질을 선택한 아이템으로 재구성하는 후반용 자율 건물을 추가합니다.
+
+물질 조작기는 3x3 크기의 첨단 건물입니다. 인접한 투입기에 자원을 넣고 제품, 재료, 품질, 묶음 크기, 생산 모드를 선택하면 설비가 작업자 없이 자동으로 작동합니다.
+
+주요 기능:
+식민지 주민 작업자 없이 자율 생산.
+영양죽 배급기처럼 인접한 투입기를 통한 자원 공급.
+생성할 아이템 선택.
+지원되는 아이템의 재료 선택.
+품질을 지원하는 아이템의 품질 선택.
+스택 가능한 아이템의 묶음 크기 선택: 1, 5, 10, 100.
+생산 모드: 한 묶음 만들기 또는 무한 반복.
+작업 중 표시되는 진행 막대.
+후반용 전용 연구 기술.
+다국어 현지화.
+
+기본 밸런스:
+전력 소비량: 10000 W.
+필요한 입력 자원: 완성품 질량의 2배.
+작업 시간: 완성품 1kg당 게임 내 8시간.
+연구 비용: 10000.
+선택한 품질은 생산 시간에 영향을 줍니다.
+선택한 재료도 생산 시간에 영향을 줍니다.
+
+설정:
+모든 주요 매개변수는 모드 설정에서 변경할 수 있습니다.
+
+설정 가능한 항목:
+전력 소비량.
+입력 질량 배율.
+1kg당 작업 시간.
+연구 비용.
+각 품질 단계의 시간 배율.
+생성된 아이템 알림.
+
+이 모드는 엄격한 후반 밸런스에도, 더 자유로운 샌드박스 플레이에도 맞게 조정할 수 있습니다.
+
+사용 방법:
+Matter Manipulation / 물질 조작을 연구합니다.
+물질 조작기를 건설합니다.
+건물 버튼이나 건축 메뉴를 통해 옆에 투입기를 건설합니다.
+투입기에 자원을 넣습니다.
+아이템, 재료, 품질, 묶음 크기, 생산 모드를 선택합니다.
+충분한 전력을 공급하면 설비가 자동으로 작동을 시작합니다.
+
+
+Chinese Simplified / 简体中文
+
+添加一个后期自动建筑，可将原始物质重构为所选物品。
+
+物质操控器是一座 3x3 的高科技建筑。将资源装入相邻漏斗，选择产物、材料、品质、批量大小和生产模式后，设备会在无人操作的情况下自动工作。
+
+主要功能：
+无需殖民者操作的自动生产。
+通过相邻漏斗输入资源，类似营养膏分配器。
+选择要制造的物品。
+为支持材料的物品选择材料。
+为支持品质的物品选择品质。
+为可堆叠物品选择批量大小：1、5、10 或 100。
+生产模式：制造一批或无限重复。
+工作时显示进度条。
+独立的后期研究科技。
+多语言本地化。
+
+默认平衡：
+耗电量：10000 W。
+所需输入资源：成品质量的 2 倍。
+工作时间：每 1 kg 成品需要游戏内 8 小时。
+研究消耗：10000。
+所选品质会影响生产时间。
+所选材料也会影响生产时间。
+
+设置：
+所有主要参数都可以在模组设置中更改。
+
+可配置项目：
+耗电量。
+输入质量倍率。
+每 1 kg 的工作时间。
+研究消耗。
+每个品质等级的时间倍率。
+成品通知。
+
+本模组既可以调整为严格的后期平衡，也可以调整为更自由的沙盒体验。
+
+使用方法：
+研究 Matter Manipulation / 物质操控。
+建造物质操控器。
+通过建筑按钮或建筑菜单在旁边建造漏斗。
+将资源放入漏斗。
+选择物品、材料、品质、批量大小和生产模式。
+提供足够电力后，设备会自动开始工作。
+
+
+Chinese Traditional / 繁體中文
+
+新增一座後期自動建築，可將原始物質重構為所選物品。
+
+物質操控器是一座 3x3 的高科技建築。將資源裝入相鄰漏斗，選擇產物、材料、品質、批次大小和生產模式後，設備會在無人操作的情況下自動工作。
+
+主要功能：
+不需要殖民者操作的自動生產。
+透過相鄰漏斗輸入資源，類似營養膏分配器。
+選擇要製造的物品。
+為支援材料的物品選擇材料。
+為支援品質的物品選擇品質。
+為可堆疊物品選擇批次大小：1、5、10 或 100。
+生產模式：製造一批或無限重複。
+工作時顯示進度條。
+獨立的後期研究科技。
+多語言在地化。
+
+預設平衡：
+耗電量：10000 W。
+所需輸入資源：成品質量的 2 倍。
+工作時間：每 1 kg 成品需要遊戲內 8 小時。
+研究成本：10000。
+所選品質會影響生產時間。
+所選材料也會影響生產時間。
+
+設定：
+所有主要參數都可以在模組設定中更改。
+
+可設定項目：
+耗電量。
+輸入質量倍率。
+每 1 kg 的工作時間。
+研究成本。
+每個品質等級的時間倍率。
+成品通知。
+
+本模組既可以調整為嚴格的後期平衡，也可以調整為更自由的沙盒體驗。
+
+使用方法：
+研究 Matter Manipulation / 物質操控。
+建造物質操控器。
+透過建築按鈕或建築選單在旁邊建造漏斗。
+將資源放入漏斗。
+選擇物品、材料、品質、批次大小和生產模式。
+提供足夠電力後，設備會自動開始工作。
