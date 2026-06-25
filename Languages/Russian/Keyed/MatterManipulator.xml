@@ -31,6 +31,7 @@
   <MatterManipulator.Inspect.BatchSize>Размер пачки: {0}</MatterManipulator.Inspect.BatchSize>
   <MatterManipulator.Inspect.Quality>Качество: {0}</MatterManipulator.Inspect.Quality>
   <MatterManipulator.Inspect.CycleQuality>Качество цикла: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.UniqueWeaponTraits>Черты уникального оружия: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>Воронки: {0}</MatterManipulator.Inspect.Hoppers>
 
   <MatterManipulator.Status.SelectItem>Статус: выберите предмет.</MatterManipulator.Status.SelectItem>
@@ -54,6 +55,8 @@
   <MatterManipulator.Command.MaterialDesc>Выбрать материал готового предмета. Множитель материала применяется ко времени цикла.</MatterManipulator.Command.MaterialDesc>
   <MatterManipulator.Command.Quality>Качество: {0}</MatterManipulator.Command.Quality>
   <MatterManipulator.Command.QualityDesc>Выбрать качество готового предмета. В режиме случайного качества каждый цикл бросает качество заново и применяет соответствующий множитель времени.</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.UniqueTraits>Черты: {0}</MatterManipulator.Command.UniqueTraits>
+  <MatterManipulator.Command.UniqueTraitsDesc>Выбрать черты для уникального оружия. По умолчанию черты случайные; каждая выбранная черта добавляет 15% к времени цикла.</MatterManipulator.Command.UniqueTraitsDesc>
   <MatterManipulator.Command.ClearTarget>Сбросить цель</MatterManipulator.Command.ClearTarget>
   <MatterManipulator.Command.ClearTargetDesc>Отменить текущий выбранный предмет. Накопленный массовый буфер останется внутри машины.</MatterManipulator.Command.ClearTargetDesc>
 
@@ -62,12 +65,17 @@
   <MatterManipulator.Message.ModeSelected>Манипулятор материи: режим {0}.</MatterManipulator.Message.ModeSelected>
   <MatterManipulator.Message.BatchSelected>Манипулятор материи: размер пачки {0}.</MatterManipulator.Message.BatchSelected>
   <MatterManipulator.Message.QualitySelected>Манипулятор материи: качество {0}.</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.UniqueTraitsSelected>Манипулятор материи: черты уникального оружия {0}.</MatterManipulator.Message.UniqueTraitsSelected>
   <MatterManipulator.Message.MakeFailed>Манипулятор материи не смог создать выбранный предмет.</MatterManipulator.Message.MakeFailed>
   <MatterManipulator.Message.NoOutputSpace>Манипулятор материи не нашел места для готового предмета.</MatterManipulator.Message.NoOutputSpace>
   <MatterManipulator.Message.Created>Манипулятор материи создал {0}.</MatterManipulator.Message.Created>
 
   <MatterManipulator.Mode.Repeat>повторять</MatterManipulator.Mode.Repeat>
   <MatterManipulator.Mode.MakeOne>сделать один раз</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.UniqueTraits.Random>случайные</MatterManipulator.UniqueTraits.Random>
+  <MatterManipulator.UniqueTraits.SelectedCount>выбрано: {0}</MatterManipulator.UniqueTraits.SelectedCount>
+  <MatterManipulator.UniqueTraits.TimeMultiplier>+15% времени</MatterManipulator.UniqueTraits.TimeMultiplier>
 
   <MatterManipulator.Time.Hours>{0} ч</MatterManipulator.Time.Hours>
   <MatterManipulator.Time.HourRange>{0}-{1} ч</MatterManipulator.Time.HourRange>
@@ -81,8 +89,13 @@
   <MatterManipulator.Dialog.Product.Title>Выбрать изделие</MatterManipulator.Dialog.Product.Title>
   <MatterManipulator.Dialog.Product.Found>Найдено: {0}. Поиск идет по названию и defName.</MatterManipulator.Dialog.Product.Found>
   <MatterManipulator.Dialog.Product.Info>{0} кг / {1} ч</MatterManipulator.Dialog.Product.Info>
+  <MatterManipulator.Dialog.UniqueTraits.Title>Выбрать черты оружия</MatterManipulator.Dialog.UniqueTraits.Title>
+  <MatterManipulator.Dialog.UniqueTraits.Description>Если ничего не выбрано, уникальное оружие получит случайные черты. Каждая выбранная черта добавляет 15% к времени цикла.</MatterManipulator.Dialog.UniqueTraits.Description>
+  <MatterManipulator.Dialog.UniqueTraits.Found>Найдено: {0}.</MatterManipulator.Dialog.UniqueTraits.Found>
 
   <MatterManipulator.Button.Selected>Выбрано</MatterManipulator.Button.Selected>
   <MatterManipulator.Button.Select>Выбрать</MatterManipulator.Button.Select>
   <MatterManipulator.Button.Material>Материал</MatterManipulator.Button.Material>
+  <MatterManipulator.Button.RandomTraits>Случайные черты</MatterManipulator.Button.RandomTraits>
+  <MatterManipulator.Button.Remove>Убрать</MatterManipulator.Button.Remove>
 </LanguageData>

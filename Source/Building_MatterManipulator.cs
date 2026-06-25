@@ -72,6 +72,32 @@ namespace MatterManipulator
             {
                 researchDef.baseCost = Settings?.researchCost ?? MatterManipulatorSettings.DefaultResearchCost;
             }
+
+            ApplySettingsToSpawnedBuildings(def);
+        }
+
+        private static void ApplySettingsToSpawnedBuildings(ThingDef def)
+        {
+            if (def == null || Current.Game?.Maps == null)
+            {
+                return;
+            }
+
+            foreach (var map in Current.Game.Maps)
+            {
+                if (map?.listerThings == null)
+                {
+                    continue;
+                }
+
+                foreach (var thing in map.listerThings.ThingsOfDef(def).ToList())
+                {
+                    if (thing is Building_MatterManipulator manipulator)
+                    {
+                        manipulator.ApplyPowerSetting();
+                    }
+                }
+            }
         }
     }
 
@@ -256,6 +282,7 @@ namespace MatterManipulator
     {
         private const int RandomQualityMode = -1;
         private const int DefaultBatchCount = 1;
+        private const float UniqueWeaponTraitTimeFactor = 0.15f;
         private static readonly int[] BatchCountChoices = { 1, 5, 10, 100 };
         private static readonly QualityCategory[] QualityChoices =
         {
@@ -269,6 +296,7 @@ namespace MatterManipulator
         };
         private static Material progressBarFilledMat;
         private static Material progressBarUnfilledMat;
+        private static readonly FieldInfo UniqueWeaponTraitsField = typeof(CompUniqueWeapon).GetField("traits", BindingFlags.Instance | BindingFlags.NonPublic);
         private static readonly IntVec3[] CardinalDirections =
         {
             new IntVec3(0, 0, 1),
@@ -289,6 +317,7 @@ namespace MatterManipulator
         private int selectedQuality = RandomQualityMode;
         private int cycleQuality = RandomQualityMode;
         private int batchCount = DefaultBatchCount;
+        private List<WeaponTraitDef> selectedUniqueWeaponTraits = new List<WeaponTraitDef>();
         private bool repeatProduction = true;
         private CompPowerTrader powerComp;
 
@@ -296,19 +325,24 @@ namespace MatterManipulator
         private float ProductMass => targetDef == null ? 0f : MassForProduct(targetDef, targetStuff) * ActiveBatchCount;
         private float RequiredFeedstockMass => ProductMass * InputMassFactor;
         private int BaseRequiredWorkTicks => targetDef == null ? 0 : Mathf.Max(1, Mathf.CeilToInt(ProductMass * WorkTicksPerKg * CurrentStuffWorkMultiplier));
-        private int RequiredWorkTicks => targetDef == null ? 0 : Mathf.Max(1, Mathf.CeilToInt(BaseRequiredWorkTicks * CurrentQualityMultiplier));
+        private int RequiredWorkTicks => targetDef == null ? 0 : Mathf.Max(1, Mathf.CeilToInt(BaseRequiredWorkTicks * CurrentWorkMultiplier));
         private float ProgressPct => RequiredWorkTicks <= 0 ? 0f : Mathf.Clamp01(progressTicks / (float)RequiredWorkTicks);
         private int ActiveBatchCount => ClampBatchCount(targetDef, batchCount);
         private bool TargetSupportsBatching => SupportsBatching(targetDef);
         private bool TargetSupportsBatchSelection => TargetSupportsBatching && BatchCountModesFor(targetDef).Skip(1).Any();
         private bool TargetSupportsQuality => targetDef != null && SupportsQuality(targetDef);
         private bool TargetSupportsStuff => targetDef != null && targetDef.MadeFromStuff && targetStuff != null;
+        private bool TargetSupportsUniqueWeapon => SupportsUniqueWeapon(targetDef);
+        private int SelectedUniqueWeaponTraitCount => SelectedUniqueWeaponTraits.Count;
         private float CurrentQualityMultiplier => TargetSupportsQuality ? QualityMultiplier(CurrentCycleQualityForTiming()) : 1f;
+        private float CurrentUniqueWeaponTraitMultiplier => TargetSupportsUniqueWeapon && SelectedUniqueWeaponTraitCount > 0 ? 1f + SelectedUniqueWeaponTraitCount * UniqueWeaponTraitTimeFactor : 1f;
+        private float CurrentWorkMultiplier => CurrentQualityMultiplier * CurrentUniqueWeaponTraitMultiplier;
         private float CurrentStuffWorkMultiplier => StuffWorkMultiplier(targetStuff);
         private static MatterManipulatorSettings Settings => MatterManipulatorMod.Settings;
         private static float InputMassFactor => Settings?.inputMassFactor ?? MatterManipulatorSettings.DefaultInputMassFactor;
         private static int WorkTicksPerKg => Mathf.CeilToInt(GenDate.TicksPerHour * (Settings?.hoursPerKg ?? MatterManipulatorSettings.DefaultHoursPerKg));
         public int SelectedQualityMode => selectedQuality;
+        public List<WeaponTraitDef> SelectedUniqueWeaponTraits => selectedUniqueWeaponTraits ?? (selectedUniqueWeaponTraits = new List<WeaponTraitDef>());
 
         public static List<ThingDef> ProductDefs
         {
@@ -332,6 +366,16 @@ namespace MatterManipulator
             base.SpawnSetup(map, respawningAfterLoad);
             MatterManipulatorMod.ApplySettingsToDefs();
             powerComp = GetComp<CompPowerTrader>();
+            ApplyPowerSetting();
+        }
+
+        public void ApplyPowerSetting()
+        {
+            powerComp = powerComp ?? GetComp<CompPowerTrader>();
+            if (powerComp != null)
+            {
+                powerComp.PowerOutput = -Mathf.Abs(Settings?.powerConsumptionWatts ?? MatterManipulatorSettings.DefaultPowerConsumptionWatts);
+            }
         }
 
         public override void ExposeData()
@@ -350,6 +394,7 @@ namespace MatterManipulator
             Scribe_Values.Look(ref cycleQuality, "cycleQuality", RandomQualityMode);
             Scribe_Values.Look(ref batchCount, "batchCount", DefaultBatchCount);
             Scribe_Values.Look(ref repeatProduction, "repeatProduction", true);
+            Scribe_Collections.Look(ref selectedUniqueWeaponTraits, "selectedUniqueWeaponTraits", LookMode.Def);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 NormalizeLoadedState(targetDefName, targetStuffDefName);
@@ -407,6 +452,11 @@ namespace MatterManipulator
             }
 
             batchCount = ClampBatchCount(targetDef, batchCount);
+            selectedUniqueWeaponTraits = SelectedUniqueWeaponTraits.Where(trait => trait != null).Distinct().OrderBy(trait => trait.label).ThenBy(trait => trait.defName).ToList();
+            if (!TargetSupportsUniqueWeapon)
+            {
+                selectedUniqueWeaponTraits.Clear();
+            }
             feedstockMass = Mathf.Max(0f, feedstockMass);
             progressTicks = Mathf.Max(0, progressTicks);
         }
@@ -496,6 +546,10 @@ namespace MatterManipulator
                     var quality = (QualityCategory)cycleQuality;
                     sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.CycleQuality", QualityLabel(quality), QualityMultiplier(quality).ToString("0.##")));
                 }
+            }
+            if (TargetSupportsUniqueWeapon)
+            {
+                sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.UniqueWeaponTraits", SelectedUniqueWeaponTraitsLabel(), CurrentUniqueWeaponTraitMultiplier.ToString("0.##")));
             }
             sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.Hoppers", AdjacentHoppers().Count().ToString()));
 
@@ -632,6 +686,17 @@ namespace MatterManipulator
                     };
                 }
 
+                if (TargetSupportsUniqueWeapon)
+                {
+                    yield return new Command_Action
+                    {
+                        defaultLabel = MatterManipulatorText.T("MatterManipulator.Command.UniqueTraits", SelectedUniqueWeaponTraitsCommandLabel()),
+                        defaultDesc = MatterManipulatorText.T("MatterManipulator.Command.UniqueTraitsDesc"),
+                        icon = CommandIcon(),
+                        action = () => Find.WindowStack.Add(new Dialog_SelectMatterWeaponTraits(this))
+                    };
+                }
+
                 yield return new Command_Action
                 {
                     defaultLabel = MatterManipulatorText.T("MatterManipulator.Command.ClearTarget"),
@@ -655,6 +720,7 @@ namespace MatterManipulator
             selectedQuality = RandomQualityMode;
             cycleQuality = RandomQualityMode;
             batchCount = DefaultBatchCount;
+            SelectedUniqueWeaponTraits.Clear();
             Messages.Message(MatterManipulatorText.T("MatterManipulator.Message.ProductSelected", TargetLabel()), this, MessageTypeDefOf.TaskCompletion, false);
         }
 
@@ -722,6 +788,25 @@ namespace MatterManipulator
             Messages.Message(MatterManipulatorText.T("MatterManipulator.Message.QualitySelected", SelectedQualityLabel()), this, MessageTypeDefOf.TaskCompletion, false);
         }
 
+        public bool HasSelectedUniqueWeaponTrait(WeaponTraitDef trait)
+        {
+            return trait != null && SelectedUniqueWeaponTraits.Contains(trait);
+        }
+
+        public void SetUniqueWeaponTraits(IEnumerable<WeaponTraitDef> traits)
+        {
+            selectedUniqueWeaponTraits = traits?
+                .Where(trait => trait != null)
+                .Distinct()
+                .OrderBy(trait => trait.label)
+                .ThenBy(trait => trait.defName)
+                .ToList() ?? new List<WeaponTraitDef>();
+
+            progressTicks = 0;
+            cycleQuality = RandomQualityMode;
+            Messages.Message(MatterManipulatorText.T("MatterManipulator.Message.UniqueTraitsSelected", SelectedUniqueWeaponTraitsLabel()), this, MessageTypeDefOf.TaskCompletion, false);
+        }
+
         private void ClearTarget()
         {
             targetDef = null;
@@ -730,6 +815,7 @@ namespace MatterManipulator
             selectedQuality = RandomQualityMode;
             cycleQuality = RandomQualityMode;
             batchCount = DefaultBatchCount;
+            SelectedUniqueWeaponTraits.Clear();
         }
 
         private void AbsorbHopperFeedstock()
@@ -819,7 +905,7 @@ namespace MatterManipulator
         private bool TryFinishProduct()
         {
             var productQuality = TargetSupportsQuality ? (QualityCategory?)CurrentCycleQualityForTiming() : null;
-            var product = MakeProduct(targetDef, targetStuff, productQuality, ActiveBatchCount);
+            var product = MakeProduct(targetDef, targetStuff, productQuality, ActiveBatchCount, TargetSupportsUniqueWeapon ? SelectedUniqueWeaponTraits.ToList() : null);
             if (product == null)
             {
                 Messages.Message(MatterManipulatorText.T("MatterManipulator.Message.MakeFailed"), this, MessageTypeDefOf.RejectInput, false);
@@ -841,7 +927,7 @@ namespace MatterManipulator
             return true;
         }
 
-        private static Thing MakeProduct(ThingDef def, ThingDef stuff, QualityCategory? qualityToSet, int stackCount)
+        private static Thing MakeProduct(ThingDef def, ThingDef stuff, QualityCategory? qualityToSet, int stackCount, List<WeaponTraitDef> weaponTraitsToSet)
         {
             try
             {
@@ -854,12 +940,58 @@ namespace MatterManipulator
                     quality.SetQuality(qualityToSet.Value, ArtGenerationContext.Outsider);
                 }
 
+                ApplyUniqueWeaponTraits(product, weaponTraitsToSet);
                 return product;
             }
             catch (Exception ex)
             {
                 Log.Warning($"[MatterManipulator] Failed to make product {def?.defName}: {ex.Message}");
                 return null;
+            }
+        }
+
+        private static void ApplyUniqueWeaponTraits(Thing product, List<WeaponTraitDef> weaponTraitsToSet)
+        {
+            if (weaponTraitsToSet == null || weaponTraitsToSet.Count == 0)
+            {
+                return;
+            }
+
+            var uniqueWeapon = product.TryGetComp<CompUniqueWeapon>();
+            if (uniqueWeapon == null)
+            {
+                return;
+            }
+
+            var cleanTraits = weaponTraitsToSet.Where(trait => trait != null).Distinct().ToList();
+            if (cleanTraits.Count == 0)
+            {
+                return;
+            }
+
+            try
+            {
+                var existingTraits = uniqueWeapon.TraitsListForReading;
+                if (existingTraits != null)
+                {
+                    existingTraits.Clear();
+                }
+                else
+                {
+                    UniqueWeaponTraitsField?.SetValue(uniqueWeapon, new List<WeaponTraitDef>());
+                }
+
+                for (var i = 0; i < cleanTraits.Count; i++)
+                {
+                    if (uniqueWeapon.CanAddTrait(cleanTraits[i]))
+                    {
+                        uniqueWeapon.AddTrait(cleanTraits[i]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Warning($"[MatterManipulator] Failed to apply unique weapon traits to {product.def?.defName}: {ex.Message}");
             }
         }
 
@@ -924,22 +1056,44 @@ namespace MatterManipulator
         {
             if (!TargetSupportsQuality)
             {
+                if (CurrentUniqueWeaponTraitMultiplier > 1.0001f)
+                {
+                    return MatterManipulatorText.T("MatterManipulator.Time.HoursMultiplier", TicksToHours(RequiredWorkTicks).ToString("0.#"), CurrentUniqueWeaponTraitMultiplier.ToString("0.##"));
+                }
+
                 return MatterManipulatorText.T("MatterManipulator.Time.Hours", TicksToHours(BaseRequiredWorkTicks).ToString("0.#"));
             }
 
             if (selectedQuality == RandomQualityMode && cycleQuality == RandomQualityMode)
             {
-                var minTicks = Mathf.CeilToInt(BaseRequiredWorkTicks * QualityMultiplier(QualityCategory.Awful));
-                var maxTicks = Mathf.CeilToInt(BaseRequiredWorkTicks * QualityMultiplier(QualityCategory.Legendary));
+                var minTicks = Mathf.CeilToInt(BaseRequiredWorkTicks * QualityMultiplier(QualityCategory.Awful) * CurrentUniqueWeaponTraitMultiplier);
+                var maxTicks = Mathf.CeilToInt(BaseRequiredWorkTicks * QualityMultiplier(QualityCategory.Legendary) * CurrentUniqueWeaponTraitMultiplier);
                 return MatterManipulatorText.T("MatterManipulator.Time.HourRange", TicksToHours(minTicks).ToString("0.#"), TicksToHours(maxTicks).ToString("0.#"));
             }
 
-            return MatterManipulatorText.T("MatterManipulator.Time.HoursMultiplier", TicksToHours(RequiredWorkTicks).ToString("0.#"), CurrentQualityMultiplier.ToString("0.##"));
+            return MatterManipulatorText.T("MatterManipulator.Time.HoursMultiplier", TicksToHours(RequiredWorkTicks).ToString("0.#"), CurrentWorkMultiplier.ToString("0.##"));
         }
 
         private string SelectedQualityLabel()
         {
             return QualityLabelForMode(selectedQuality);
+        }
+
+        private string SelectedUniqueWeaponTraitsLabel()
+        {
+            if (SelectedUniqueWeaponTraitCount == 0)
+            {
+                return MatterManipulatorText.T("MatterManipulator.UniqueTraits.Random");
+            }
+
+            return string.Join(", ", SelectedUniqueWeaponTraits.Select(trait => trait.LabelCap.ToString()).ToArray());
+        }
+
+        private string SelectedUniqueWeaponTraitsCommandLabel()
+        {
+            return SelectedUniqueWeaponTraitCount == 0 ?
+                MatterManipulatorText.T("MatterManipulator.UniqueTraits.Random") :
+                MatterManipulatorText.T("MatterManipulator.UniqueTraits.SelectedCount", SelectedUniqueWeaponTraitCount.ToString());
         }
 
         public static IEnumerable<int> QualityModes()
@@ -976,6 +1130,15 @@ namespace MatterManipulator
         public static string QualityMultiplierLabelForMode(int qualityMode)
         {
             return qualityMode == RandomQualityMode ? MatterManipulatorText.T("MatterManipulator.Quality.RandomEveryCycle") : $"x{QualityMultiplier((QualityCategory)qualityMode):0.##}";
+        }
+
+        public static List<WeaponTraitDef> UniqueWeaponTraitDefs()
+        {
+            return DefDatabase<WeaponTraitDef>.AllDefsListForReading
+                .Where(trait => trait != null)
+                .OrderBy(trait => trait.label)
+                .ThenBy(trait => trait.defName)
+                .ToList();
         }
 
         private static bool IsValidQualityMode(int qualityMode)
@@ -1044,6 +1207,11 @@ namespace MatterManipulator
         private static bool SupportsQuality(ThingDef def)
         {
             return def != null && def.HasComp(typeof(CompQuality));
+        }
+
+        private static bool SupportsUniqueWeapon(ThingDef def)
+        {
+            return def != null && def.HasComp(typeof(CompUniqueWeapon));
         }
 
         private static bool SupportsBatching(ThingDef def)
@@ -1273,6 +1441,105 @@ namespace MatterManipulator
             {
                 manipulator.SetQualityMode(mode);
                 Close();
+            }
+        }
+    }
+
+    public class Dialog_SelectMatterWeaponTraits : Window
+    {
+        private const float RowHeight = 54f;
+        private readonly Building_MatterManipulator manipulator;
+        private string search = "";
+        private Vector2 scrollPosition;
+
+        public Dialog_SelectMatterWeaponTraits(Building_MatterManipulator manipulator)
+        {
+            this.manipulator = manipulator;
+            doCloseX = true;
+            absorbInputAroundWindow = true;
+            forcePause = true;
+            closeOnClickedOutside = true;
+        }
+
+        public override Vector2 InitialSize => new Vector2(720f, 760f);
+
+        public override void DoWindowContents(Rect inRect)
+        {
+            Text.Font = GameFont.Medium;
+            Widgets.Label(new Rect(0f, 0f, inRect.width, 34f), MatterManipulatorText.T("MatterManipulator.Dialog.UniqueTraits.Title"));
+
+            Text.Font = GameFont.Small;
+            Widgets.Label(new Rect(0f, 38f, inRect.width, 46f), MatterManipulatorText.T("MatterManipulator.Dialog.UniqueTraits.Description"));
+
+            var randomButtonRect = new Rect(0f, 90f, 180f, 32f);
+            if (Widgets.ButtonText(randomButtonRect, MatterManipulatorText.T("MatterManipulator.Button.RandomTraits")))
+            {
+                manipulator.SetUniqueWeaponTraits(null);
+                Close();
+                return;
+            }
+
+            search = Widgets.TextField(new Rect(randomButtonRect.xMax + 12f, 90f, inRect.width - randomButtonRect.width - 12f, 32f), search ?? "");
+
+            var traits = FilteredTraits().Take(500).ToList();
+            Widgets.Label(new Rect(0f, 128f, inRect.width, 24f), MatterManipulatorText.T("MatterManipulator.Dialog.UniqueTraits.Found", traits.Count.ToString()));
+
+            var outRect = new Rect(0f, 158f, inRect.width, inRect.height - 158f);
+            var viewRect = new Rect(0f, 0f, outRect.width - 16f, Mathf.Max(outRect.height, traits.Count * RowHeight));
+
+            Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
+            for (var i = 0; i < traits.Count; i++)
+            {
+                var row = new Rect(0f, i * RowHeight, viewRect.width, RowHeight - 4f);
+                DrawTraitRow(row, traits[i]);
+            }
+            Widgets.EndScrollView();
+        }
+
+        private IEnumerable<WeaponTraitDef> FilteredTraits()
+        {
+            var query = (search ?? "").Trim().ToLowerInvariant();
+            foreach (var trait in Building_MatterManipulator.UniqueWeaponTraitDefs())
+            {
+                var text = $"{trait.label} {trait.defName} {trait.description}".ToLowerInvariant();
+                if (query.Length == 0 || text.Contains(query))
+                {
+                    yield return trait;
+                }
+            }
+        }
+
+        private void DrawTraitRow(Rect row, WeaponTraitDef trait)
+        {
+            if (Mouse.IsOver(row))
+            {
+                Widgets.DrawHighlight(row);
+            }
+
+            var selected = manipulator.HasSelectedUniqueWeaponTrait(trait);
+            var labelRect = new Rect(row.x + 4f, row.y + 4f, row.width * 0.34f, 22f);
+            var descRect = new Rect(labelRect.x, labelRect.yMax + 2f, row.width - 130f, 22f);
+            var multiplierRect = new Rect(labelRect.xMax + 8f, row.y + 4f, 96f, 22f);
+            var buttonRect = new Rect(row.xMax - 112f, row.y + 8f, 108f, row.height - 16f);
+
+            Widgets.Label(labelRect, trait.LabelCap);
+            Widgets.Label(descRect, trait.description ?? trait.defName);
+            Widgets.Label(multiplierRect, MatterManipulatorText.T("MatterManipulator.UniqueTraits.TimeMultiplier"));
+
+            var buttonLabel = selected ? MatterManipulatorText.T("MatterManipulator.Button.Remove") : MatterManipulatorText.T("MatterManipulator.Button.Select");
+            if (Widgets.ButtonText(buttonRect, buttonLabel))
+            {
+                var traits = manipulator.SelectedUniqueWeaponTraits.ToList();
+                if (selected)
+                {
+                    traits.Remove(trait);
+                }
+                else
+                {
+                    traits.Add(trait);
+                }
+
+                manipulator.SetUniqueWeaponTraits(traits);
             }
         }
     }

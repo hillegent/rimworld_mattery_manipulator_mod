@@ -31,6 +31,7 @@
   <MatterManipulator.Inspect.BatchSize>Taille du lot : {0}</MatterManipulator.Inspect.BatchSize>
   <MatterManipulator.Inspect.Quality>Qualité : {0}</MatterManipulator.Inspect.Quality>
   <MatterManipulator.Inspect.CycleQuality>Qualité du cycle : {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.UniqueWeaponTraits>Traits d'arme unique : {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>Trémies : {0}</MatterManipulator.Inspect.Hoppers>
 
   <MatterManipulator.Status.SelectItem>État : sélectionnez un objet.</MatterManipulator.Status.SelectItem>
@@ -54,6 +55,8 @@
   <MatterManipulator.Command.MaterialDesc>Sélectionnez le matériau de l'objet fini. Le multiplicateur du matériau est appliqué au temps de cycle.</MatterManipulator.Command.MaterialDesc>
   <MatterManipulator.Command.Quality>Qualité : {0}</MatterManipulator.Command.Quality>
   <MatterManipulator.Command.QualityDesc>Sélectionnez la qualité de l'objet fini. En mode qualité aléatoire, chaque cycle relance la qualité et applique le multiplicateur de temps correspondant.</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.UniqueTraits>Traits : {0}</MatterManipulator.Command.UniqueTraits>
+  <MatterManipulator.Command.UniqueTraitsDesc>Sélectionnez les traits des armes uniques. Par défaut, les traits sont aléatoires ; chaque trait choisi ajoute 15% au temps de cycle.</MatterManipulator.Command.UniqueTraitsDesc>
   <MatterManipulator.Command.ClearTarget>Effacer la cible</MatterManipulator.Command.ClearTarget>
   <MatterManipulator.Command.ClearTargetDesc>Annule l'objet actuellement sélectionné. Le tampon de masse accumulé reste dans la machine.</MatterManipulator.Command.ClearTargetDesc>
 
@@ -62,12 +65,17 @@
   <MatterManipulator.Message.ModeSelected>Manipulateur de matière : mode {0}.</MatterManipulator.Message.ModeSelected>
   <MatterManipulator.Message.BatchSelected>Manipulateur de matière : taille du lot {0}.</MatterManipulator.Message.BatchSelected>
   <MatterManipulator.Message.QualitySelected>Manipulateur de matière : qualité {0}.</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.UniqueTraitsSelected>Manipulateur de matière : traits d'arme unique {0}.</MatterManipulator.Message.UniqueTraitsSelected>
   <MatterManipulator.Message.MakeFailed>Le manipulateur de matière n'a pas pu créer l'objet sélectionné.</MatterManipulator.Message.MakeFailed>
   <MatterManipulator.Message.NoOutputSpace>Le manipulateur de matière n'a pas trouvé d'espace pour l'objet fini.</MatterManipulator.Message.NoOutputSpace>
   <MatterManipulator.Message.Created>Le manipulateur de matière a créé {0}.</MatterManipulator.Message.Created>
 
   <MatterManipulator.Mode.Repeat>répéter</MatterManipulator.Mode.Repeat>
   <MatterManipulator.Mode.MakeOne>fabriquer une fois</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.UniqueTraits.Random>aléatoires</MatterManipulator.UniqueTraits.Random>
+  <MatterManipulator.UniqueTraits.SelectedCount>{0} sélectionnés</MatterManipulator.UniqueTraits.SelectedCount>
+  <MatterManipulator.UniqueTraits.TimeMultiplier>+15% temps</MatterManipulator.UniqueTraits.TimeMultiplier>
 
   <MatterManipulator.Time.Hours>{0} h</MatterManipulator.Time.Hours>
   <MatterManipulator.Time.HourRange>{0}-{1} h</MatterManipulator.Time.HourRange>
@@ -81,8 +89,13 @@
   <MatterManipulator.Dialog.Product.Title>Sélectionner le produit</MatterManipulator.Dialog.Product.Title>
   <MatterManipulator.Dialog.Product.Found>Trouvé : {0}. La recherche utilise le libellé et le defName.</MatterManipulator.Dialog.Product.Found>
   <MatterManipulator.Dialog.Product.Info>{0} kg / {1} h</MatterManipulator.Dialog.Product.Info>
+  <MatterManipulator.Dialog.UniqueTraits.Title>Sélectionner les traits d'arme</MatterManipulator.Dialog.UniqueTraits.Title>
+  <MatterManipulator.Dialog.UniqueTraits.Description>Si rien n'est sélectionné, les armes uniques recevront des traits aléatoires. Chaque trait choisi ajoute 15% au temps de cycle.</MatterManipulator.Dialog.UniqueTraits.Description>
+  <MatterManipulator.Dialog.UniqueTraits.Found>Trouvé : {0}.</MatterManipulator.Dialog.UniqueTraits.Found>
 
   <MatterManipulator.Button.Selected>Sélectionné</MatterManipulator.Button.Selected>
   <MatterManipulator.Button.Select>Sélectionner</MatterManipulator.Button.Select>
   <MatterManipulator.Button.Material>Matériau</MatterManipulator.Button.Material>
+  <MatterManipulator.Button.RandomTraits>Traits aléatoires</MatterManipulator.Button.RandomTraits>
+  <MatterManipulator.Button.Remove>Retirer</MatterManipulator.Button.Remove>
 </LanguageData>

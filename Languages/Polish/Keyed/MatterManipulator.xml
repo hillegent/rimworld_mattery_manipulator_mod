@@ -31,6 +31,7 @@
   <MatterManipulator.Inspect.BatchSize>Rozmiar partii: {0}</MatterManipulator.Inspect.BatchSize>
   <MatterManipulator.Inspect.Quality>Jakość: {0}</MatterManipulator.Inspect.Quality>
   <MatterManipulator.Inspect.CycleQuality>Jakość cyklu: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.UniqueWeaponTraits>Cechy unikalnej broni: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>Leje: {0}</MatterManipulator.Inspect.Hoppers>
 
   <MatterManipulator.Status.SelectItem>Status: wybierz przedmiot.</MatterManipulator.Status.SelectItem>
@@ -54,6 +55,8 @@
   <MatterManipulator.Command.MaterialDesc>Wybierz materiał gotowego przedmiotu. Mnożnik materiału jest stosowany do czasu cyklu.</MatterManipulator.Command.MaterialDesc>
   <MatterManipulator.Command.Quality>Jakość: {0}</MatterManipulator.Command.Quality>
   <MatterManipulator.Command.QualityDesc>Wybierz jakość gotowego przedmiotu. W trybie losowej jakości każdy cykl ponownie losuje jakość i stosuje odpowiedni mnożnik czasu.</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.UniqueTraits>Cechy: {0}</MatterManipulator.Command.UniqueTraits>
+  <MatterManipulator.Command.UniqueTraitsDesc>Wybierz cechy dla unikalnej broni. Domyślnie cechy są losowe; każda wybrana cecha dodaje 15% do czasu cyklu.</MatterManipulator.Command.UniqueTraitsDesc>
   <MatterManipulator.Command.ClearTarget>Wyczyść cel</MatterManipulator.Command.ClearTarget>
   <MatterManipulator.Command.ClearTargetDesc>Anuluje aktualnie wybrany przedmiot. Zgromadzony bufor masy pozostanie w maszynie.</MatterManipulator.Command.ClearTargetDesc>
 
@@ -62,12 +65,17 @@
   <MatterManipulator.Message.ModeSelected>Manipulator materii: tryb {0}.</MatterManipulator.Message.ModeSelected>
   <MatterManipulator.Message.BatchSelected>Manipulator materii: rozmiar partii {0}.</MatterManipulator.Message.BatchSelected>
   <MatterManipulator.Message.QualitySelected>Manipulator materii: jakość {0}.</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.UniqueTraitsSelected>Manipulator materii: cechy unikalnej broni {0}.</MatterManipulator.Message.UniqueTraitsSelected>
   <MatterManipulator.Message.MakeFailed>Manipulator materii nie mógł utworzyć wybranego przedmiotu.</MatterManipulator.Message.MakeFailed>
   <MatterManipulator.Message.NoOutputSpace>Manipulator materii nie znalazł miejsca na gotowy przedmiot.</MatterManipulator.Message.NoOutputSpace>
   <MatterManipulator.Message.Created>Manipulator materii utworzył {0}.</MatterManipulator.Message.Created>
 
   <MatterManipulator.Mode.Repeat>powtarzaj</MatterManipulator.Mode.Repeat>
   <MatterManipulator.Mode.MakeOne>utwórz raz</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.UniqueTraits.Random>losowe</MatterManipulator.UniqueTraits.Random>
+  <MatterManipulator.UniqueTraits.SelectedCount>wybrano: {0}</MatterManipulator.UniqueTraits.SelectedCount>
+  <MatterManipulator.UniqueTraits.TimeMultiplier>+15% czasu</MatterManipulator.UniqueTraits.TimeMultiplier>
 
   <MatterManipulator.Time.Hours>{0} godz.</MatterManipulator.Time.Hours>
   <MatterManipulator.Time.HourRange>{0}-{1} godz.</MatterManipulator.Time.HourRange>
@@ -81,8 +89,13 @@
   <MatterManipulator.Dialog.Product.Title>Wybierz produkt</MatterManipulator.Dialog.Product.Title>
   <MatterManipulator.Dialog.Product.Found>Znaleziono: {0}. Wyszukiwanie używa etykiety i defName.</MatterManipulator.Dialog.Product.Found>
   <MatterManipulator.Dialog.Product.Info>{0} kg / {1} godz.</MatterManipulator.Dialog.Product.Info>
+  <MatterManipulator.Dialog.UniqueTraits.Title>Wybierz cechy broni</MatterManipulator.Dialog.UniqueTraits.Title>
+  <MatterManipulator.Dialog.UniqueTraits.Description>Jeśli nic nie wybrano, unikalna broń otrzyma losowe cechy. Każda wybrana cecha dodaje 15% do czasu cyklu.</MatterManipulator.Dialog.UniqueTraits.Description>
+  <MatterManipulator.Dialog.UniqueTraits.Found>Znaleziono: {0}.</MatterManipulator.Dialog.UniqueTraits.Found>
 
   <MatterManipulator.Button.Selected>Wybrano</MatterManipulator.Button.Selected>
   <MatterManipulator.Button.Select>Wybierz</MatterManipulator.Button.Select>
   <MatterManipulator.Button.Material>Materiał</MatterManipulator.Button.Material>
+  <MatterManipulator.Button.RandomTraits>Losowe cechy</MatterManipulator.Button.RandomTraits>
+  <MatterManipulator.Button.Remove>Usuń</MatterManipulator.Button.Remove>
 </LanguageData>

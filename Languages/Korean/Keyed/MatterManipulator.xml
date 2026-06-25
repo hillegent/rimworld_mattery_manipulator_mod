@@ -31,6 +31,7 @@
   <MatterManipulator.Inspect.BatchSize>묶음 크기: {0}</MatterManipulator.Inspect.BatchSize>
   <MatterManipulator.Inspect.Quality>품질: {0}</MatterManipulator.Inspect.Quality>
   <MatterManipulator.Inspect.CycleQuality>주기 품질: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.UniqueWeaponTraits>고유 무기 특성: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>투입기: {0}</MatterManipulator.Inspect.Hoppers>
 
   <MatterManipulator.Status.SelectItem>상태: 아이템을 선택하세요.</MatterManipulator.Status.SelectItem>
@@ -54,6 +55,8 @@
   <MatterManipulator.Command.MaterialDesc>완성품의 재료를 선택합니다. 재료 배율은 주기 시간에 적용됩니다.</MatterManipulator.Command.MaterialDesc>
   <MatterManipulator.Command.Quality>품질: {0}</MatterManipulator.Command.Quality>
   <MatterManipulator.Command.QualityDesc>완성품의 품질을 선택합니다. 무작위 품질 모드에서는 매 주기마다 품질을 다시 굴리고 해당 시간 배율을 적용합니다.</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.UniqueTraits>특성: {0}</MatterManipulator.Command.UniqueTraits>
+  <MatterManipulator.Command.UniqueTraitsDesc>고유 무기의 특성을 선택합니다. 기본값은 무작위 특성이며, 선택한 특성 하나마다 주기 시간이 15% 증가합니다.</MatterManipulator.Command.UniqueTraitsDesc>
   <MatterManipulator.Command.ClearTarget>대상 지우기</MatterManipulator.Command.ClearTarget>
   <MatterManipulator.Command.ClearTargetDesc>현재 선택한 아이템을 취소합니다. 누적된 질량 버퍼는 기계 안에 남습니다.</MatterManipulator.Command.ClearTargetDesc>
 
@@ -62,12 +65,17 @@
   <MatterManipulator.Message.ModeSelected>물질 조작기: 모드 {0}.</MatterManipulator.Message.ModeSelected>
   <MatterManipulator.Message.BatchSelected>물질 조작기: 묶음 크기 {0}.</MatterManipulator.Message.BatchSelected>
   <MatterManipulator.Message.QualitySelected>물질 조작기: 품질 {0}.</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.UniqueTraitsSelected>물질 조작기: 고유 무기 특성 {0}.</MatterManipulator.Message.UniqueTraitsSelected>
   <MatterManipulator.Message.MakeFailed>물질 조작기가 선택한 아이템을 만들 수 없었습니다.</MatterManipulator.Message.MakeFailed>
   <MatterManipulator.Message.NoOutputSpace>물질 조작기가 완성품을 놓을 공간을 찾지 못했습니다.</MatterManipulator.Message.NoOutputSpace>
   <MatterManipulator.Message.Created>물질 조작기가 {0}을(를) 만들었습니다.</MatterManipulator.Message.Created>
 
   <MatterManipulator.Mode.Repeat>반복</MatterManipulator.Mode.Repeat>
   <MatterManipulator.Mode.MakeOne>한 번 만들기</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.UniqueTraits.Random>무작위</MatterManipulator.UniqueTraits.Random>
+  <MatterManipulator.UniqueTraits.SelectedCount>{0}개 선택됨</MatterManipulator.UniqueTraits.SelectedCount>
+  <MatterManipulator.UniqueTraits.TimeMultiplier>시간 +15%</MatterManipulator.UniqueTraits.TimeMultiplier>
 
   <MatterManipulator.Time.Hours>{0}시간</MatterManipulator.Time.Hours>
   <MatterManipulator.Time.HourRange>{0}-{1}시간</MatterManipulator.Time.HourRange>
@@ -81,8 +89,13 @@
   <MatterManipulator.Dialog.Product.Title>제품 선택</MatterManipulator.Dialog.Product.Title>
   <MatterManipulator.Dialog.Product.Found>찾음: {0}. 검색은 라벨과 defName을 사용합니다.</MatterManipulator.Dialog.Product.Found>
   <MatterManipulator.Dialog.Product.Info>{0} kg / {1}시간</MatterManipulator.Dialog.Product.Info>
+  <MatterManipulator.Dialog.UniqueTraits.Title>무기 특성 선택</MatterManipulator.Dialog.UniqueTraits.Title>
+  <MatterManipulator.Dialog.UniqueTraits.Description>아무것도 선택하지 않으면 고유 무기는 무작위 특성을 받습니다. 선택한 특성 하나마다 주기 시간이 15% 증가합니다.</MatterManipulator.Dialog.UniqueTraits.Description>
+  <MatterManipulator.Dialog.UniqueTraits.Found>찾음: {0}.</MatterManipulator.Dialog.UniqueTraits.Found>
 
   <MatterManipulator.Button.Selected>선택됨</MatterManipulator.Button.Selected>
   <MatterManipulator.Button.Select>선택</MatterManipulator.Button.Select>
   <MatterManipulator.Button.Material>재료</MatterManipulator.Button.Material>
+  <MatterManipulator.Button.RandomTraits>무작위 특성</MatterManipulator.Button.RandomTraits>
+  <MatterManipulator.Button.Remove>제거</MatterManipulator.Button.Remove>
 </LanguageData>

@@ -31,6 +31,7 @@
   <MatterManipulator.Inspect.BatchSize>批次大小：{0}</MatterManipulator.Inspect.BatchSize>
   <MatterManipulator.Inspect.Quality>品質：{0}</MatterManipulator.Inspect.Quality>
   <MatterManipulator.Inspect.CycleQuality>循環品質：{0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.UniqueWeaponTraits>獨特武器特性：{0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>漏斗：{0}</MatterManipulator.Inspect.Hoppers>
 
   <MatterManipulator.Status.SelectItem>狀態：選擇一個物品。</MatterManipulator.Status.SelectItem>
@@ -54,6 +55,8 @@
   <MatterManipulator.Command.MaterialDesc>選擇成品的材料。材料倍率會套用到循環時間。</MatterManipulator.Command.MaterialDesc>
   <MatterManipulator.Command.Quality>品質：{0}</MatterManipulator.Command.Quality>
   <MatterManipulator.Command.QualityDesc>選擇成品的品質。在隨機品質模式下，每個循環都會重新抽取品質並套用對應的時間倍率。</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.UniqueTraits>特性：{0}</MatterManipulator.Command.UniqueTraits>
+  <MatterManipulator.Command.UniqueTraitsDesc>選擇獨特武器的特性。預設特性為隨機；每個已選特性會使循環時間增加 15%。</MatterManipulator.Command.UniqueTraitsDesc>
   <MatterManipulator.Command.ClearTarget>清除目標</MatterManipulator.Command.ClearTarget>
   <MatterManipulator.Command.ClearTargetDesc>取消目前選擇的物品。已累積的質量緩衝會留在機器內部。</MatterManipulator.Command.ClearTargetDesc>
 
@@ -62,12 +65,17 @@
   <MatterManipulator.Message.ModeSelected>物質操控器：模式 {0}。</MatterManipulator.Message.ModeSelected>
   <MatterManipulator.Message.BatchSelected>物質操控器：批次大小 {0}。</MatterManipulator.Message.BatchSelected>
   <MatterManipulator.Message.QualitySelected>物質操控器：品質 {0}。</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.UniqueTraitsSelected>物質操控器：獨特武器特性 {0}。</MatterManipulator.Message.UniqueTraitsSelected>
   <MatterManipulator.Message.MakeFailed>物質操控器無法建立所選物品。</MatterManipulator.Message.MakeFailed>
   <MatterManipulator.Message.NoOutputSpace>物質操控器找不到放置成品的空間。</MatterManipulator.Message.NoOutputSpace>
   <MatterManipulator.Message.Created>物質操控器建立了 {0}。</MatterManipulator.Message.Created>
 
   <MatterManipulator.Mode.Repeat>重複</MatterManipulator.Mode.Repeat>
   <MatterManipulator.Mode.MakeOne>生產一次</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.UniqueTraits.Random>隨機</MatterManipulator.UniqueTraits.Random>
+  <MatterManipulator.UniqueTraits.SelectedCount>已選擇 {0}</MatterManipulator.UniqueTraits.SelectedCount>
+  <MatterManipulator.UniqueTraits.TimeMultiplier>時間 +15%</MatterManipulator.UniqueTraits.TimeMultiplier>
 
   <MatterManipulator.Time.Hours>{0} 小時</MatterManipulator.Time.Hours>
   <MatterManipulator.Time.HourRange>{0}-{1} 小時</MatterManipulator.Time.HourRange>
@@ -81,8 +89,13 @@
   <MatterManipulator.Dialog.Product.Title>選擇產物</MatterManipulator.Dialog.Product.Title>
   <MatterManipulator.Dialog.Product.Found>找到：{0}。搜尋使用標籤和 defName。</MatterManipulator.Dialog.Product.Found>
   <MatterManipulator.Dialog.Product.Info>{0} kg / {1} 小時</MatterManipulator.Dialog.Product.Info>
+  <MatterManipulator.Dialog.UniqueTraits.Title>選擇武器特性</MatterManipulator.Dialog.UniqueTraits.Title>
+  <MatterManipulator.Dialog.UniqueTraits.Description>如果未選擇任何特性，獨特武器將獲得隨機特性。每個已選特性會使循環時間增加 15%。</MatterManipulator.Dialog.UniqueTraits.Description>
+  <MatterManipulator.Dialog.UniqueTraits.Found>找到：{0}。</MatterManipulator.Dialog.UniqueTraits.Found>
 
   <MatterManipulator.Button.Selected>已選擇</MatterManipulator.Button.Selected>
   <MatterManipulator.Button.Select>選擇</MatterManipulator.Button.Select>
   <MatterManipulator.Button.Material>材料</MatterManipulator.Button.Material>
+  <MatterManipulator.Button.RandomTraits>隨機特性</MatterManipulator.Button.RandomTraits>
+  <MatterManipulator.Button.Remove>移除</MatterManipulator.Button.Remove>
 </LanguageData>

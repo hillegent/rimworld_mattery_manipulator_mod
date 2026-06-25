@@ -31,6 +31,7 @@
   <MatterManipulator.Inspect.BatchSize>Batch size: {0}</MatterManipulator.Inspect.BatchSize>
   <MatterManipulator.Inspect.Quality>Quality: {0}</MatterManipulator.Inspect.Quality>
   <MatterManipulator.Inspect.CycleQuality>Cycle quality: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.UniqueWeaponTraits>Unique weapon traits: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>Hoppers: {0}</MatterManipulator.Inspect.Hoppers>
 
   <MatterManipulator.Status.SelectItem>Status: select an item.</MatterManipulator.Status.SelectItem>
@@ -54,6 +55,8 @@
   <MatterManipulator.Command.MaterialDesc>Select the material for the finished item. The material multiplier is applied to cycle time.</MatterManipulator.Command.MaterialDesc>
   <MatterManipulator.Command.Quality>Quality: {0}</MatterManipulator.Command.Quality>
   <MatterManipulator.Command.QualityDesc>Select the quality of the finished item. In random quality mode, each cycle rolls quality again and applies the matching time multiplier.</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.UniqueTraits>Traits: {0}</MatterManipulator.Command.UniqueTraits>
+  <MatterManipulator.Command.UniqueTraitsDesc>Select traits for unique weapons. By default, traits are random; each selected trait adds 15% to cycle time.</MatterManipulator.Command.UniqueTraitsDesc>
   <MatterManipulator.Command.ClearTarget>Clear target</MatterManipulator.Command.ClearTarget>
   <MatterManipulator.Command.ClearTargetDesc>Cancel the currently selected item. The accumulated mass buffer will remain inside the machine.</MatterManipulator.Command.ClearTargetDesc>
 
@@ -62,12 +65,17 @@
   <MatterManipulator.Message.ModeSelected>Matter manipulator: mode {0}.</MatterManipulator.Message.ModeSelected>
   <MatterManipulator.Message.BatchSelected>Matter manipulator: batch size {0}.</MatterManipulator.Message.BatchSelected>
   <MatterManipulator.Message.QualitySelected>Matter manipulator: quality {0}.</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.UniqueTraitsSelected>Matter manipulator: unique weapon traits {0}.</MatterManipulator.Message.UniqueTraitsSelected>
   <MatterManipulator.Message.MakeFailed>The matter manipulator could not create the selected item.</MatterManipulator.Message.MakeFailed>
   <MatterManipulator.Message.NoOutputSpace>The matter manipulator could not find space for the finished item.</MatterManipulator.Message.NoOutputSpace>
   <MatterManipulator.Message.Created>The matter manipulator created {0}.</MatterManipulator.Message.Created>
 
   <MatterManipulator.Mode.Repeat>repeat</MatterManipulator.Mode.Repeat>
   <MatterManipulator.Mode.MakeOne>make once</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.UniqueTraits.Random>random</MatterManipulator.UniqueTraits.Random>
+  <MatterManipulator.UniqueTraits.SelectedCount>{0} selected</MatterManipulator.UniqueTraits.SelectedCount>
+  <MatterManipulator.UniqueTraits.TimeMultiplier>+15% time</MatterManipulator.UniqueTraits.TimeMultiplier>
 
   <MatterManipulator.Time.Hours>{0} h</MatterManipulator.Time.Hours>
   <MatterManipulator.Time.HourRange>{0}-{1} h</MatterManipulator.Time.HourRange>
@@ -81,8 +89,13 @@
   <MatterManipulator.Dialog.Product.Title>Select product</MatterManipulator.Dialog.Product.Title>
   <MatterManipulator.Dialog.Product.Found>Found: {0}. Search uses label and defName.</MatterManipulator.Dialog.Product.Found>
   <MatterManipulator.Dialog.Product.Info>{0} kg / {1} h</MatterManipulator.Dialog.Product.Info>
+  <MatterManipulator.Dialog.UniqueTraits.Title>Select weapon traits</MatterManipulator.Dialog.UniqueTraits.Title>
+  <MatterManipulator.Dialog.UniqueTraits.Description>If nothing is selected, unique weapons will receive random traits. Each selected trait adds 15% to cycle time.</MatterManipulator.Dialog.UniqueTraits.Description>
+  <MatterManipulator.Dialog.UniqueTraits.Found>Found: {0}.</MatterManipulator.Dialog.UniqueTraits.Found>
 
   <MatterManipulator.Button.Selected>Selected</MatterManipulator.Button.Selected>
   <MatterManipulator.Button.Select>Select</MatterManipulator.Button.Select>
   <MatterManipulator.Button.Material>Material</MatterManipulator.Button.Material>
+  <MatterManipulator.Button.RandomTraits>Random traits</MatterManipulator.Button.RandomTraits>
+  <MatterManipulator.Button.Remove>Remove</MatterManipulator.Button.Remove>
 </LanguageData>

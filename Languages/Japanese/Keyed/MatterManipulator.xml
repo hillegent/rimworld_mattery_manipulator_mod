@@ -31,6 +31,7 @@
   <MatterManipulator.Inspect.BatchSize>バッチサイズ: {0}</MatterManipulator.Inspect.BatchSize>
   <MatterManipulator.Inspect.Quality>品質: {0}</MatterManipulator.Inspect.Quality>
   <MatterManipulator.Inspect.CycleQuality>サイクル品質: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.UniqueWeaponTraits>ユニーク武器特性: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>ホッパー: {0}</MatterManipulator.Inspect.Hoppers>
 
   <MatterManipulator.Status.SelectItem>状態: アイテムを選択してください。</MatterManipulator.Status.SelectItem>
@@ -54,6 +55,8 @@
   <MatterManipulator.Command.MaterialDesc>完成品の素材を選択します。素材倍率はサイクル時間に適用されます。</MatterManipulator.Command.MaterialDesc>
   <MatterManipulator.Command.Quality>品質: {0}</MatterManipulator.Command.Quality>
   <MatterManipulator.Command.QualityDesc>完成品の品質を選択します。ランダム品質モードでは、各サイクルごとに品質が再抽選され、対応する時間倍率が適用されます。</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.UniqueTraits>特性: {0}</MatterManipulator.Command.UniqueTraits>
+  <MatterManipulator.Command.UniqueTraitsDesc>ユニーク武器の特性を選択します。初期状態では特性はランダムで、選択した特性1つごとにサイクル時間が15%増加します。</MatterManipulator.Command.UniqueTraitsDesc>
   <MatterManipulator.Command.ClearTarget>対象を解除</MatterManipulator.Command.ClearTarget>
   <MatterManipulator.Command.ClearTargetDesc>現在選択中のアイテムをキャンセルします。蓄積された質量バッファは機械内に残ります。</MatterManipulator.Command.ClearTargetDesc>
 
@@ -62,12 +65,17 @@
   <MatterManipulator.Message.ModeSelected>物質マニピュレーター: モード {0}。</MatterManipulator.Message.ModeSelected>
   <MatterManipulator.Message.BatchSelected>物質マニピュレーター: バッチサイズ {0}。</MatterManipulator.Message.BatchSelected>
   <MatterManipulator.Message.QualitySelected>物質マニピュレーター: 品質 {0}。</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.UniqueTraitsSelected>物質マニピュレーター: ユニーク武器特性 {0}。</MatterManipulator.Message.UniqueTraitsSelected>
   <MatterManipulator.Message.MakeFailed>物質マニピュレーターは選択されたアイテムを作成できませんでした。</MatterManipulator.Message.MakeFailed>
   <MatterManipulator.Message.NoOutputSpace>物質マニピュレーターは完成品を置く場所を見つけられませんでした。</MatterManipulator.Message.NoOutputSpace>
   <MatterManipulator.Message.Created>物質マニピュレーターが {0} を作成しました。</MatterManipulator.Message.Created>
 
   <MatterManipulator.Mode.Repeat>繰り返し</MatterManipulator.Mode.Repeat>
   <MatterManipulator.Mode.MakeOne>1回作成</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.UniqueTraits.Random>ランダム</MatterManipulator.UniqueTraits.Random>
+  <MatterManipulator.UniqueTraits.SelectedCount>{0}個選択</MatterManipulator.UniqueTraits.SelectedCount>
+  <MatterManipulator.UniqueTraits.TimeMultiplier>時間 +15%</MatterManipulator.UniqueTraits.TimeMultiplier>
 
   <MatterManipulator.Time.Hours>{0} 時間</MatterManipulator.Time.Hours>
   <MatterManipulator.Time.HourRange>{0}-{1} 時間</MatterManipulator.Time.HourRange>
@@ -81,8 +89,13 @@
   <MatterManipulator.Dialog.Product.Title>製品を選択</MatterManipulator.Dialog.Product.Title>
   <MatterManipulator.Dialog.Product.Found>検出: {0}。検索はラベルと defName を使用します。</MatterManipulator.Dialog.Product.Found>
   <MatterManipulator.Dialog.Product.Info>{0} kg / {1} 時間</MatterManipulator.Dialog.Product.Info>
+  <MatterManipulator.Dialog.UniqueTraits.Title>武器特性を選択</MatterManipulator.Dialog.UniqueTraits.Title>
+  <MatterManipulator.Dialog.UniqueTraits.Description>何も選択しない場合、ユニーク武器はランダム特性を得ます。選択した特性1つごとにサイクル時間が15%増加します。</MatterManipulator.Dialog.UniqueTraits.Description>
+  <MatterManipulator.Dialog.UniqueTraits.Found>検出: {0}。</MatterManipulator.Dialog.UniqueTraits.Found>
 
   <MatterManipulator.Button.Selected>選択中</MatterManipulator.Button.Selected>
   <MatterManipulator.Button.Select>選択</MatterManipulator.Button.Select>
   <MatterManipulator.Button.Material>素材</MatterManipulator.Button.Material>
+  <MatterManipulator.Button.RandomTraits>ランダム特性</MatterManipulator.Button.RandomTraits>
+  <MatterManipulator.Button.Remove>削除</MatterManipulator.Button.Remove>
 </LanguageData>

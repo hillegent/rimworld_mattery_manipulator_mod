@@ -31,6 +31,7 @@
   <MatterManipulator.Inspect.BatchSize>Parti boyutu: {0}</MatterManipulator.Inspect.BatchSize>
   <MatterManipulator.Inspect.Quality>Kalite: {0}</MatterManipulator.Inspect.Quality>
   <MatterManipulator.Inspect.CycleQuality>Döngü kalitesi: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
+  <MatterManipulator.Inspect.UniqueWeaponTraits>Benzersiz silah özellikleri: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>Hazneler: {0}</MatterManipulator.Inspect.Hoppers>
 
   <MatterManipulator.Status.SelectItem>Durum: bir eşya seçin.</MatterManipulator.Status.SelectItem>
@@ -54,6 +55,8 @@
   <MatterManipulator.Command.MaterialDesc>Bitmiş eşyanın malzemesini seçin. Malzeme çarpanı döngü süresine uygulanır.</MatterManipulator.Command.MaterialDesc>
   <MatterManipulator.Command.Quality>Kalite: {0}</MatterManipulator.Command.Quality>
   <MatterManipulator.Command.QualityDesc>Bitmiş eşyanın kalitesini seçin. Rastgele kalite modunda her döngü kaliteyi yeniden belirler ve uygun zaman çarpanını uygular.</MatterManipulator.Command.QualityDesc>
+  <MatterManipulator.Command.UniqueTraits>Özellikler: {0}</MatterManipulator.Command.UniqueTraits>
+  <MatterManipulator.Command.UniqueTraitsDesc>Benzersiz silahlar için özellik seçin. Varsayılan olarak özellikler rastgeledir; seçilen her özellik döngü süresine %15 ekler.</MatterManipulator.Command.UniqueTraitsDesc>
   <MatterManipulator.Command.ClearTarget>Hedefi temizle</MatterManipulator.Command.ClearTarget>
   <MatterManipulator.Command.ClearTargetDesc>Geçerli seçili eşyayı iptal eder. Biriken kütle tamponu makinenin içinde kalır.</MatterManipulator.Command.ClearTargetDesc>
 
@@ -62,12 +65,17 @@
   <MatterManipulator.Message.ModeSelected>Madde manipülatörü: mod {0}.</MatterManipulator.Message.ModeSelected>
   <MatterManipulator.Message.BatchSelected>Madde manipülatörü: parti boyutu {0}.</MatterManipulator.Message.BatchSelected>
   <MatterManipulator.Message.QualitySelected>Madde manipülatörü: kalite {0}.</MatterManipulator.Message.QualitySelected>
+  <MatterManipulator.Message.UniqueTraitsSelected>Madde manipülatörü: benzersiz silah özellikleri {0}.</MatterManipulator.Message.UniqueTraitsSelected>
   <MatterManipulator.Message.MakeFailed>Madde manipülatörü seçilen eşyayı oluşturamadı.</MatterManipulator.Message.MakeFailed>
   <MatterManipulator.Message.NoOutputSpace>Madde manipülatörü bitmiş eşya için yer bulamadı.</MatterManipulator.Message.NoOutputSpace>
   <MatterManipulator.Message.Created>Madde manipülatörü {0} oluşturdu.</MatterManipulator.Message.Created>
 
   <MatterManipulator.Mode.Repeat>tekrarla</MatterManipulator.Mode.Repeat>
   <MatterManipulator.Mode.MakeOne>bir kez üret</MatterManipulator.Mode.MakeOne>
+
+  <MatterManipulator.UniqueTraits.Random>rastgele</MatterManipulator.UniqueTraits.Random>
+  <MatterManipulator.UniqueTraits.SelectedCount>{0} seçildi</MatterManipulator.UniqueTraits.SelectedCount>
+  <MatterManipulator.UniqueTraits.TimeMultiplier>+%15 süre</MatterManipulator.UniqueTraits.TimeMultiplier>
 
   <MatterManipulator.Time.Hours>{0} sa.</MatterManipulator.Time.Hours>
   <MatterManipulator.Time.HourRange>{0}-{1} sa.</MatterManipulator.Time.HourRange>
@@ -81,8 +89,13 @@
   <MatterManipulator.Dialog.Product.Title>Ürün seç</MatterManipulator.Dialog.Product.Title>
   <MatterManipulator.Dialog.Product.Found>Bulunan: {0}. Arama etiket ve defName kullanır.</MatterManipulator.Dialog.Product.Found>
   <MatterManipulator.Dialog.Product.Info>{0} kg / {1} sa.</MatterManipulator.Dialog.Product.Info>
+  <MatterManipulator.Dialog.UniqueTraits.Title>Silah özellikleri seç</MatterManipulator.Dialog.UniqueTraits.Title>
+  <MatterManipulator.Dialog.UniqueTraits.Description>Hiçbir şey seçilmezse benzersiz silahlar rastgele özellik alır. Seçilen her özellik döngü süresine %15 ekler.</MatterManipulator.Dialog.UniqueTraits.Description>
+  <MatterManipulator.Dialog.UniqueTraits.Found>Bulunan: {0}.</MatterManipulator.Dialog.UniqueTraits.Found>
 
   <MatterManipulator.Button.Selected>Seçildi</MatterManipulator.Button.Selected>
   <MatterManipulator.Button.Select>Seç</MatterManipulator.Button.Select>
   <MatterManipulator.Button.Material>Malzeme</MatterManipulator.Button.Material>
+  <MatterManipulator.Button.RandomTraits>Rastgele özellikler</MatterManipulator.Button.RandomTraits>
+  <MatterManipulator.Button.Remove>Kaldır</MatterManipulator.Button.Remove>
 </LanguageData>
