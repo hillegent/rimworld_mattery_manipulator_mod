@@ -462,10 +462,13 @@ namespace MatterManipulator
             }
 
             batchCount = ClampBatchCount(targetDef, batchCount);
-            selectedUniqueWeaponTraits = SelectedUniqueWeaponTraits.Where(trait => trait != null).Distinct().OrderBy(trait => trait.label).ThenBy(trait => trait.defName).ToList();
             if (!TargetSupportsUniqueWeapon)
             {
                 selectedUniqueWeaponTraits.Clear();
+            }
+            else
+            {
+                selectedUniqueWeaponTraits = NormalizeUniqueWeaponTraitList(SelectedUniqueWeaponTraits);
             }
             feedstockMass = Mathf.Max(0f, feedstockMass);
             progressTicks = Mathf.Max(0, progressTicks);
@@ -805,14 +808,24 @@ namespace MatterManipulator
             return trait != null && SelectedUniqueWeaponTraits.Contains(trait);
         }
 
+        public bool CanSelectUniqueWeaponTrait(WeaponTraitDef trait)
+        {
+            if (!IsUniqueWeaponTraitForCurrentTarget(trait))
+            {
+                return false;
+            }
+
+            if (HasSelectedUniqueWeaponTrait(trait))
+            {
+                return true;
+            }
+
+            return CanAddUniqueWeaponTraitToList(trait, SelectedUniqueWeaponTraits);
+        }
+
         public void SetUniqueWeaponTraits(IEnumerable<WeaponTraitDef> traits)
         {
-            selectedUniqueWeaponTraits = traits?
-                .Where(trait => trait != null)
-                .Distinct()
-                .OrderBy(trait => trait.label)
-                .ThenBy(trait => trait.defName)
-                .ToList() ?? new List<WeaponTraitDef>();
+            selectedUniqueWeaponTraits = NormalizeUniqueWeaponTraitList(traits);
 
             progressTicks = 0;
             cycleQuality = RandomQualityMode;
@@ -964,6 +977,65 @@ namespace MatterManipulator
                 Log.Warning($"[MatterManipulator] Failed to make product {def?.defName}: {ex.Message}");
                 return null;
             }
+        }
+
+        private List<WeaponTraitDef> NormalizeUniqueWeaponTraitList(IEnumerable<WeaponTraitDef> traits)
+        {
+            var result = new List<WeaponTraitDef>();
+            if (!TargetSupportsUniqueWeapon || traits == null)
+            {
+                return result;
+            }
+
+            foreach (var trait in traits.Where(trait => trait != null).Distinct())
+            {
+                if (CanAddUniqueWeaponTraitToList(trait, result))
+                {
+                    result.Add(trait);
+                }
+            }
+
+            return result
+                .OrderBy(trait => trait.label)
+                .ThenBy(trait => trait.defName)
+                .ToList();
+        }
+
+        private bool CanAddUniqueWeaponTraitToList(WeaponTraitDef trait, List<WeaponTraitDef> existingTraits)
+        {
+            if (!IsUniqueWeaponTraitForCurrentTarget(trait))
+            {
+                return false;
+            }
+
+            if (existingTraits.NullOrEmpty() && !trait.canGenerateAlone)
+            {
+                return false;
+            }
+
+            if (!existingTraits.NullOrEmpty())
+            {
+                foreach (var existingTrait in existingTraits)
+                {
+                    if (existingTrait != null && trait.Overlaps(existingTrait))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        private bool IsUniqueWeaponTraitForCurrentTarget(WeaponTraitDef trait)
+        {
+            if (trait == null || !TargetSupportsUniqueWeapon || !ModLister.CheckOdyssey("Unique Weapons"))
+            {
+                return false;
+            }
+
+            var props = targetDef.GetCompProperties<CompProperties_UniqueWeapon>();
+            return props?.weaponCategories != null && props.weaponCategories.Contains(trait.weaponCategory);
         }
 
         private static void ApplyUniqueWeaponTraits(Thing product, List<WeaponTraitDef> weaponTraitsToSet)
@@ -1563,7 +1635,8 @@ namespace MatterManipulator
 
     public class Dialog_SelectMatterWeaponTraits : Window
     {
-        private const float RowHeight = 54f;
+        private const float MinRowHeight = 84f;
+        private const float RowGap = 4f;
         private readonly Building_MatterManipulator manipulator;
         private string search = "";
         private Vector2 scrollPosition;
@@ -1601,13 +1674,18 @@ namespace MatterManipulator
             Widgets.Label(new Rect(0f, 128f, inRect.width, 24f), MatterManipulatorText.T("MatterManipulator.Dialog.UniqueTraits.Found", traits.Count.ToString()));
 
             var outRect = new Rect(0f, 158f, inRect.width, inRect.height - 158f);
-            var viewRect = new Rect(0f, 0f, outRect.width - 16f, Mathf.Max(outRect.height, traits.Count * RowHeight));
+            var viewWidth = outRect.width - 16f;
+            var rowHeights = traits.Select(trait => TraitRowHeight(trait, viewWidth)).ToList();
+            var viewRect = new Rect(0f, 0f, viewWidth, Mathf.Max(outRect.height, rowHeights.Sum()));
 
             Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
+            var curY = 0f;
             for (var i = 0; i < traits.Count; i++)
             {
-                var row = new Rect(0f, i * RowHeight, viewRect.width, RowHeight - 4f);
+                var rowHeight = rowHeights[i];
+                var row = new Rect(0f, curY, viewRect.width, rowHeight - RowGap);
                 DrawTraitRow(row, traits[i]);
+                curY += rowHeight;
             }
             Widgets.EndScrollView();
         }
@@ -1617,6 +1695,11 @@ namespace MatterManipulator
             var query = (search ?? "").Trim().ToLowerInvariant();
             foreach (var trait in Building_MatterManipulator.UniqueWeaponTraitDefs())
             {
+                if (!manipulator.CanSelectUniqueWeaponTrait(trait))
+                {
+                    continue;
+                }
+
                 var text = $"{trait.label} {trait.defName} {trait.description}".ToLowerInvariant();
                 if (query.Length == 0 || text.Contains(query))
                 {
@@ -1633,13 +1716,16 @@ namespace MatterManipulator
             }
 
             var selected = manipulator.HasSelectedUniqueWeaponTrait(trait);
-            var labelRect = new Rect(row.x + 4f, row.y + 4f, row.width * 0.34f, 22f);
-            var descRect = new Rect(labelRect.x, labelRect.yMax + 2f, row.width - 130f, 22f);
-            var multiplierRect = new Rect(labelRect.xMax + 8f, row.y + 4f, 96f, 22f);
-            var buttonRect = new Rect(row.xMax - 112f, row.y + 8f, 108f, row.height - 16f);
+            var buttonRect = new Rect(row.xMax - 112f, row.y + Mathf.Max(8f, (row.height - 32f) / 2f), 108f, 32f);
+            var multiplierRect = new Rect(buttonRect.x - 104f, row.y + 4f, 96f, 22f);
+            var labelRect = new Rect(row.x + 4f, row.y + 4f, multiplierRect.x - row.x - 12f, 22f);
+            var descRect = new Rect(labelRect.x, labelRect.yMax + 4f, row.width - 130f, row.height - labelRect.height - 12f);
 
             Widgets.Label(labelRect, trait.LabelCap);
-            Widgets.Label(descRect, trait.description ?? trait.defName);
+            var oldWordWrap = Text.WordWrap;
+            Text.WordWrap = true;
+            Widgets.Label(descRect, TraitDescription(trait));
+            Text.WordWrap = oldWordWrap;
             Widgets.Label(multiplierRect, MatterManipulatorText.T("MatterManipulator.UniqueTraits.TimeMultiplier"));
 
             var buttonLabel = selected ? MatterManipulatorText.T("MatterManipulator.Button.Remove") : MatterManipulatorText.T("MatterManipulator.Button.Select");
@@ -1657,6 +1743,24 @@ namespace MatterManipulator
 
                 manipulator.SetUniqueWeaponTraits(traits);
             }
+        }
+
+        private static float TraitRowHeight(WeaponTraitDef trait, float rowWidth)
+        {
+            var descriptionWidth = Mathf.Max(160f, rowWidth - 130f);
+            var oldFont = Text.Font;
+            var oldWordWrap = Text.WordWrap;
+            Text.Font = GameFont.Small;
+            Text.WordWrap = true;
+            var descriptionHeight = Text.CalcHeight(TraitDescription(trait), descriptionWidth);
+            Text.Font = oldFont;
+            Text.WordWrap = oldWordWrap;
+            return Mathf.Max(MinRowHeight, descriptionHeight + 38f);
+        }
+
+        private static string TraitDescription(WeaponTraitDef trait)
+        {
+            return trait?.description ?? trait?.defName ?? "";
         }
     }
 
