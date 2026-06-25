@@ -33,6 +33,9 @@
   <MatterManipulator.Inspect.CycleQuality>循環品質：{0} (x{1})</MatterManipulator.Inspect.CycleQuality>
   <MatterManipulator.Inspect.UniqueWeaponTraits>獨特武器特性：{0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>漏斗：{0}</MatterManipulator.Inspect.Hoppers>
+  <MatterManipulator.Inspect.CurrentParameterProduced>目前參數已生產：{0}</MatterManipulator.Inspect.CurrentParameterProduced>
+  <MatterManipulator.Inspect.TotalProduced>總產出：{0}</MatterManipulator.Inspect.TotalProduced>
+  <MatterManipulator.Inspect.TotalProducedMass>總產出質量：{0} 公斤</MatterManipulator.Inspect.TotalProducedMass>
 
   <MatterManipulator.Status.SelectItem>狀態：選擇一個物品。</MatterManipulator.Status.SelectItem>
   <MatterManipulator.Status.NoPower>狀態：無電力。</MatterManipulator.Status.NoPower>

@@ -318,6 +318,11 @@ namespace MatterManipulator
         private int cycleQuality = RandomQualityMode;
         private int batchCount = DefaultBatchCount;
         private List<WeaponTraitDef> selectedUniqueWeaponTraits = new List<WeaponTraitDef>();
+        private Dictionary<string, int> producedByParameter = new Dictionary<string, int>();
+        private List<string> producedParameterKeysWorkingList;
+        private List<int> producedParameterCountsWorkingList;
+        private int totalProducedCount;
+        private float totalProducedMass;
         private bool repeatProduction = true;
         private CompPowerTrader powerComp;
 
@@ -395,6 +400,9 @@ namespace MatterManipulator
             Scribe_Values.Look(ref batchCount, "batchCount", DefaultBatchCount);
             Scribe_Values.Look(ref repeatProduction, "repeatProduction", true);
             Scribe_Collections.Look(ref selectedUniqueWeaponTraits, "selectedUniqueWeaponTraits", LookMode.Def);
+            Scribe_Values.Look(ref totalProducedCount, "totalProducedCount", 0);
+            Scribe_Values.Look(ref totalProducedMass, "totalProducedMass", 0f);
+            Scribe_Collections.Look(ref producedByParameter, "producedByParameter", LookMode.Value, LookMode.Value, ref producedParameterKeysWorkingList, ref producedParameterCountsWorkingList);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 NormalizeLoadedState(targetDefName, targetStuffDefName);
@@ -403,6 +411,8 @@ namespace MatterManipulator
 
         private void NormalizeLoadedState(string targetDefName, string targetStuffDefName)
         {
+            NormalizeProductionStats();
+
             if (targetDef == null && !targetDefName.NullOrEmpty())
             {
                 targetDef = DefDatabase<ThingDef>.GetNamedSilentFail(targetDefName);
@@ -526,6 +536,7 @@ namespace MatterManipulator
 
             if (targetDef == null)
             {
+                AppendProductionStats(sb, false);
                 sb.Append(MatterManipulatorText.T("MatterManipulator.Status.SelectItem"));
                 return sb.ToString();
             }
@@ -552,6 +563,7 @@ namespace MatterManipulator
                 sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.UniqueWeaponTraits", SelectedUniqueWeaponTraitsLabel(), CurrentUniqueWeaponTraitMultiplier.ToString("0.##")));
             }
             sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.Hoppers", AdjacentHoppers().Count().ToString()));
+            AppendProductionStats(sb, true);
 
             if (!Powered)
             {
@@ -912,6 +924,9 @@ namespace MatterManipulator
                 return false;
             }
 
+            var producedCount = Mathf.Max(DefaultBatchCount, product.stackCount);
+            var producedMass = MassForProduct(targetDef, targetStuff) * producedCount;
+            var productionKey = CurrentProductionParameterKey();
             var outputCell = InteractionCell.IsValid && InteractionCell.InBounds(Map) ? InteractionCell : Position;
             if (!GenPlace.TryPlaceThing(product, outputCell, Map, ThingPlaceMode.Near))
             {
@@ -920,6 +935,7 @@ namespace MatterManipulator
                 return false;
             }
 
+            RecordProductionStats(productionKey, producedCount, producedMass);
             if (Settings?.showResultNotifications ?? MatterManipulatorSettings.DefaultShowResultNotifications)
             {
                 Messages.Message(MatterManipulatorText.T("MatterManipulator.Message.Created", product.LabelShortCap), product, MessageTypeDefOf.TaskCompletion, false);
@@ -993,6 +1009,106 @@ namespace MatterManipulator
             {
                 Log.Warning($"[MatterManipulator] Failed to apply unique weapon traits to {product.def?.defName}: {ex.Message}");
             }
+        }
+
+        private void AppendProductionStats(StringBuilder sb, bool includeCurrentParameters)
+        {
+            if (includeCurrentParameters)
+            {
+                sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.CurrentParameterProduced", ProducedCountForCurrentParameters().ToString()));
+            }
+
+            sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.TotalProduced", totalProducedCount.ToString()));
+            sb.AppendLine(MatterManipulatorText.T("MatterManipulator.Inspect.TotalProducedMass", totalProducedMass.ToString("0.##")));
+        }
+
+        private int ProducedCountForCurrentParameters()
+        {
+            var productionKey = CurrentProductionParameterKey();
+            if (productionKey.NullOrEmpty() || producedByParameter == null)
+            {
+                return 0;
+            }
+
+            return producedByParameter.TryGetValue(productionKey, out var count) ? Mathf.Max(0, count) : 0;
+        }
+
+        private string CurrentProductionParameterKey()
+        {
+            if (targetDef == null)
+            {
+                return null;
+            }
+
+            var keyBuilder = new StringBuilder();
+            keyBuilder.Append(targetDef.defName);
+            keyBuilder.Append('|');
+            keyBuilder.Append(targetStuff?.defName ?? "none");
+            keyBuilder.Append('|');
+            keyBuilder.Append(TargetSupportsQuality ? selectedQuality.ToString() : "noQuality");
+            keyBuilder.Append('|');
+            if (!TargetSupportsUniqueWeapon)
+            {
+                keyBuilder.Append("noUnique");
+            }
+            else if (SelectedUniqueWeaponTraitCount == 0)
+            {
+                keyBuilder.Append("randomUnique");
+            }
+            else
+            {
+                foreach (var trait in SelectedUniqueWeaponTraits.Where(trait => trait != null).OrderBy(trait => trait.defName))
+                {
+                    keyBuilder.Append(trait.defName);
+                    keyBuilder.Append(',');
+                }
+            }
+
+            return keyBuilder.ToString();
+        }
+
+        private void RecordProductionStats(string productionKey, int producedCount, float producedMass)
+        {
+            if (producedCount <= 0)
+            {
+                return;
+            }
+
+            producedByParameter = producedByParameter ?? new Dictionary<string, int>();
+            totalProducedCount = AddClamped(totalProducedCount, producedCount);
+            totalProducedMass = Mathf.Max(0f, totalProducedMass + Mathf.Max(0f, producedMass));
+
+            if (!productionKey.NullOrEmpty())
+            {
+                producedByParameter.TryGetValue(productionKey, out var currentCount);
+                producedByParameter[productionKey] = AddClamped(currentCount, producedCount);
+            }
+        }
+
+        private void NormalizeProductionStats()
+        {
+            totalProducedCount = Mathf.Max(0, totalProducedCount);
+            totalProducedMass = Mathf.Max(0f, totalProducedMass);
+
+            if (producedByParameter == null)
+            {
+                producedByParameter = new Dictionary<string, int>();
+                return;
+            }
+
+            producedByParameter = producedByParameter
+                .Where(entry => !entry.Key.NullOrEmpty() && entry.Value > 0)
+                .ToDictionary(entry => entry.Key, entry => Mathf.Max(0, entry.Value));
+        }
+
+        private static int AddClamped(int current, int add)
+        {
+            if (add <= 0)
+            {
+                return current;
+            }
+
+            return current > int.MaxValue - add ? int.MaxValue : current + add;
         }
 
         private string TargetLabel()

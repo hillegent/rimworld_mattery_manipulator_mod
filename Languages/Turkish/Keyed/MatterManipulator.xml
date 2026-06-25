@@ -33,6 +33,9 @@
   <MatterManipulator.Inspect.CycleQuality>Döngü kalitesi: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
   <MatterManipulator.Inspect.UniqueWeaponTraits>Benzersiz silah özellikleri: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>Hazneler: {0}</MatterManipulator.Inspect.Hoppers>
+  <MatterManipulator.Inspect.CurrentParameterProduced>Geçerli parametrelerle üretilen: {0}</MatterManipulator.Inspect.CurrentParameterProduced>
+  <MatterManipulator.Inspect.TotalProduced>Toplam üretilen: {0}</MatterManipulator.Inspect.TotalProduced>
+  <MatterManipulator.Inspect.TotalProducedMass>Toplam üretilen kütle: {0} kg</MatterManipulator.Inspect.TotalProducedMass>
 
   <MatterManipulator.Status.SelectItem>Durum: bir eşya seçin.</MatterManipulator.Status.SelectItem>
   <MatterManipulator.Status.NoPower>Durum: güç yok.</MatterManipulator.Status.NoPower>

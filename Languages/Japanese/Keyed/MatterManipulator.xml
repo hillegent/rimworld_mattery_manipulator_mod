@@ -33,6 +33,9 @@
   <MatterManipulator.Inspect.CycleQuality>サイクル品質: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
   <MatterManipulator.Inspect.UniqueWeaponTraits>ユニーク武器特性: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>ホッパー: {0}</MatterManipulator.Inspect.Hoppers>
+  <MatterManipulator.Inspect.CurrentParameterProduced>現在の設定で生産: {0}</MatterManipulator.Inspect.CurrentParameterProduced>
+  <MatterManipulator.Inspect.TotalProduced>総生産数: {0}</MatterManipulator.Inspect.TotalProduced>
+  <MatterManipulator.Inspect.TotalProducedMass>総生産質量: {0} kg</MatterManipulator.Inspect.TotalProducedMass>
 
   <MatterManipulator.Status.SelectItem>状態: アイテムを選択してください。</MatterManipulator.Status.SelectItem>
   <MatterManipulator.Status.NoPower>状態: 電力がありません。</MatterManipulator.Status.NoPower>

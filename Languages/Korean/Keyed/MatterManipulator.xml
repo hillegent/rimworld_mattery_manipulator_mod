@@ -33,6 +33,9 @@
   <MatterManipulator.Inspect.CycleQuality>주기 품질: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
   <MatterManipulator.Inspect.UniqueWeaponTraits>고유 무기 특성: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>투입기: {0}</MatterManipulator.Inspect.Hoppers>
+  <MatterManipulator.Inspect.CurrentParameterProduced>현재 설정으로 생산: {0}</MatterManipulator.Inspect.CurrentParameterProduced>
+  <MatterManipulator.Inspect.TotalProduced>총 생산 수: {0}</MatterManipulator.Inspect.TotalProduced>
+  <MatterManipulator.Inspect.TotalProducedMass>총 생산 질량: {0} kg</MatterManipulator.Inspect.TotalProducedMass>
 
   <MatterManipulator.Status.SelectItem>상태: 아이템을 선택하세요.</MatterManipulator.Status.SelectItem>
   <MatterManipulator.Status.NoPower>상태: 전력이 없습니다.</MatterManipulator.Status.NoPower>

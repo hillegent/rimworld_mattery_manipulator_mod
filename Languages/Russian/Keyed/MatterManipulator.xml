@@ -33,6 +33,9 @@
   <MatterManipulator.Inspect.CycleQuality>Качество цикла: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
   <MatterManipulator.Inspect.UniqueWeaponTraits>Черты уникального оружия: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>Воронки: {0}</MatterManipulator.Inspect.Hoppers>
+  <MatterManipulator.Inspect.CurrentParameterProduced>Сделано с текущими параметрами: {0}</MatterManipulator.Inspect.CurrentParameterProduced>
+  <MatterManipulator.Inspect.TotalProduced>Выпущено всего: {0}</MatterManipulator.Inspect.TotalProduced>
+  <MatterManipulator.Inspect.TotalProducedMass>Масса выпущенного всего: {0} кг</MatterManipulator.Inspect.TotalProducedMass>
 
   <MatterManipulator.Status.SelectItem>Статус: выберите предмет.</MatterManipulator.Status.SelectItem>
   <MatterManipulator.Status.NoPower>Статус: нет питания.</MatterManipulator.Status.NoPower>

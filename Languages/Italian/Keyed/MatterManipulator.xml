@@ -33,6 +33,9 @@
   <MatterManipulator.Inspect.CycleQuality>Qualità ciclo: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
   <MatterManipulator.Inspect.UniqueWeaponTraits>Tratti arma unica: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>Tramogge: {0}</MatterManipulator.Inspect.Hoppers>
+  <MatterManipulator.Inspect.CurrentParameterProduced>Prodotti con i parametri attuali: {0}</MatterManipulator.Inspect.CurrentParameterProduced>
+  <MatterManipulator.Inspect.TotalProduced>Prodotti totali: {0}</MatterManipulator.Inspect.TotalProduced>
+  <MatterManipulator.Inspect.TotalProducedMass>Massa totale prodotta: {0} kg</MatterManipulator.Inspect.TotalProducedMass>
 
   <MatterManipulator.Status.SelectItem>Stato: seleziona un oggetto.</MatterManipulator.Status.SelectItem>
   <MatterManipulator.Status.NoPower>Stato: nessuna energia.</MatterManipulator.Status.NoPower>

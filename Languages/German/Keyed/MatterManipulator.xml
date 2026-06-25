@@ -33,6 +33,9 @@
   <MatterManipulator.Inspect.CycleQuality>Zyklusqualität: {0} (x{1})</MatterManipulator.Inspect.CycleQuality>
   <MatterManipulator.Inspect.UniqueWeaponTraits>Einzigartige Waffenmerkmale: {0} (x{1})</MatterManipulator.Inspect.UniqueWeaponTraits>
   <MatterManipulator.Inspect.Hoppers>Trichter: {0}</MatterManipulator.Inspect.Hoppers>
+  <MatterManipulator.Inspect.CurrentParameterProduced>Mit aktuellen Parametern hergestellt: {0}</MatterManipulator.Inspect.CurrentParameterProduced>
+  <MatterManipulator.Inspect.TotalProduced>Insgesamt hergestellt: {0}</MatterManipulator.Inspect.TotalProduced>
+  <MatterManipulator.Inspect.TotalProducedMass>Insgesamt hergestellte Masse: {0} kg</MatterManipulator.Inspect.TotalProducedMass>
 
   <MatterManipulator.Status.SelectItem>Status: Gegenstand auswählen.</MatterManipulator.Status.SelectItem>
   <MatterManipulator.Status.NoPower>Status: keine Energie.</MatterManipulator.Status.NoPower>
